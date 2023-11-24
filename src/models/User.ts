@@ -9,10 +9,6 @@ export default function (sequelize: Sequelize) {
                 primaryKey: true,
                 defaultValue: DataTypes.UUIDV4
             },
-            gym: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
             name: {
                 type: DataTypes.STRING,
                 allowNull: false
@@ -22,27 +18,28 @@ export default function (sequelize: Sequelize) {
                 allowNull: false
             },
             dni: {
-                type: DataTypes.NUMBER,
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             edad: {
-                type: DataTypes.NUMBER,
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             email: {
                 type: DataTypes.STRING,
-                allowNull: false
+                allowNull: false,
+                unique: true
             },
             usuario: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
             phone: {
-                type: DataTypes.NUMBER,
+                type: DataTypes.BIGINT,
                 allowNull: false
             },
             contactEmergency: {
-                type: DataTypes.NUMBER,
+                type: DataTypes.BIGINT,
                 allowNull: false
             },
             admin: {
