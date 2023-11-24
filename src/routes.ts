@@ -10,7 +10,7 @@ server.use(morgan('dev'))
 server.use(express.json())
 server.use(cors())
 
-server.get('/allUsers', async (_req: Request, res: Response) => {
+server.get('/users', async (_req: Request, res: Response) => {
     console.log('GETsad')
     try {
         const users = await User.findAll()
@@ -21,7 +21,7 @@ server.get('/allUsers', async (_req: Request, res: Response) => {
     }
 })
 
-server.post('/users', async (req: Request, res: Response) => {
+server.post('/user', async (req: Request, res: Response) => {
     const { name, surname } = req.body
     try {
         const newUser = await User.create({ name, surname })
