@@ -1,4 +1,4 @@
-import { DataTypes, Sequelize, UUIDV4 } from "sequelize";
+import { DataTypes, Sequelize } from "sequelize";
 
 export default function (sequelize: Sequelize) {
     sequelize.define(
@@ -14,6 +14,9 @@ export default function (sequelize: Sequelize) {
                 unique: true,
                 allowNull: false
             }
+        },
+        {
+            timestamps: false
         }
     )
 } 
