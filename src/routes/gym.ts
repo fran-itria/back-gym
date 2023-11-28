@@ -11,7 +11,7 @@ gym.get('', async (_req: Request, res: Response) => {
                 attributes: ['name', 'surname', 'usuario']
             }]
         })
-        res.status(200).json({ Gimnasios: gyms })
+        res.status(200).json(gyms)
     } catch (error) {
         console.log(error)
         res.status(404).json(error)
