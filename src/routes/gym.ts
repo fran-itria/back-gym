@@ -7,7 +7,8 @@ gym.get('', async (_req: Request, res: Response) => {
     try {
         const gyms = await Gym.findAll({
             include: [{
-                model: User
+                model: User,
+                attributes: ['name', 'surname', 'usuario']
             }]
         })
         res.status(200).json({ Gimnasios: gyms })
