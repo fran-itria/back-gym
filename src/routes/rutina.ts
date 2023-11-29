@@ -1,10 +1,10 @@
 import { Router } from "express";
 import getRutinasController from "../controllers/rutina/getRutinas";
-import createRutinaOneDayController from "../controllers/rutina/createRutina";
+import createOneDayRutinaController from "../controllers/rutina/createOneDayRutina";
 
 const rutina = Router();
 
 rutina.get("", getRutinasController);
-rutina.post("", createRutinaOneDayController);
+rutina.post("", createOneDayRutinaController);
 
 export default rutina;
