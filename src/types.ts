@@ -23,7 +23,9 @@ export type ejercicioPropertys = {
 
 export type rutinaPropertys = {
   userId: string;
-  ejercicioName: string;
-  series: number;
-  repeticiones: string;
+  dias: {
+    series: string,
+    repeticiones: string,
+    ejercicioName: string
+  }[]
 };
