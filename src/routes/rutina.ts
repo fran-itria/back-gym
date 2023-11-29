@@ -1,17 +1,11 @@
 import { Router, Request, Response } from "express";
 import { Day, Ejercicio, Rutina, User } from "../db";
 import { error } from "console";
+import getRutinasController from "../controllers/rutina/getRutinas";
 
 const rutina = Router()
 
-rutina.get('', async (_req: Request, res: Response) => {
-    const rutinas: any = await Rutina.findAll({
-        include: {
-            model: Day
-        }
-    })
-    if (rutinas) res.status(200).json({ Rutinas: rutinas })
-})
+rutina.get('', getRutinasController)
 
 rutina.post('', async (req: Request, res: Response) => {
     const { userId, series, repeticiones, ejercicioName } = req.body
