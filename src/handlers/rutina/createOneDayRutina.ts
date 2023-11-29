@@ -1,10 +1,10 @@
 import { Rutina } from "../../db";
-import { rutinaPropertys } from "../../types";
+import { OneDayrutinaPropertys } from "../../types";
 import { createDay } from "../day/createDay";
 import { createEjercicios } from "../ejercicio/createEjercicios";
 import { getOneUserId } from "../user/getOneUserId";
 
-export const createOneDayRutina = async (propertys: rutinaPropertys) => {
+export const createOneDayRutina = async (propertys: OneDayrutinaPropertys) => {
   const { userId, dias } = propertys;
   const user: any = await getOneUserId({ id: userId });
   if (!user) throw new Error("Usuario no encontrado");
