@@ -15,10 +15,11 @@ const getUsers = async () => {
                         include: [
                             {
                                 model: Ejercicio
-                            }
-                        ]
+                            },
+                        ],
                     }
-                ]
+                ],
+
             }
         ]
     })
