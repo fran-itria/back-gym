@@ -27,7 +27,7 @@ export type ejerciciosPropertys = {
   repeticiones: string;
 }[];
 
-export type rutinaPropertys = {
+export type OneDayrutinaPropertys = {
   userId: string;
   dias: {
     series: string,
@@ -35,3 +35,14 @@ export type rutinaPropertys = {
     name: string
   }[]
 };
+
+export type RutinaPropertys = {
+  userId: string;
+  dias: {
+    ejercicios: {
+      name: string
+      series: string,
+      repeticiones: string,
+    }[]
+  }[]
+}
