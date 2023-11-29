@@ -17,15 +17,21 @@ export type userPropertys = {
 
 export type ejercicioPropertys = {
   name: string;
-  series: number;
+  series: string;
   repeticiones: string;
 };
+
+export type ejerciciosPropertys = {
+  name: string;
+  series: string;
+  repeticiones: string;
+}[];
 
 export type rutinaPropertys = {
   userId: string;
   dias: {
     series: string,
     repeticiones: string,
-    ejercicioName: string
+    name: string
   }[]
 };
