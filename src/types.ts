@@ -20,3 +20,10 @@ export type ejercicioPropertys = {
   series: number;
   repeticiones: string;
 };
+
+export type rutinaPropertys = {
+  userId: string;
+  ejercicioName: string;
+  series: number;
+  repeticiones: string;
+};
