@@ -28,7 +28,7 @@ export type ejerciciosPropertys = {
 }[];
 
 export type OneDayrutinaPropertys = {
-  userId: string;
+  rutinaId: string;
   dias: {
     series: string,
     repeticiones: string,
