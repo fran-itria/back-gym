@@ -1,5 +1,4 @@
-import { Router, Request, Response } from "express";
-import { Day } from "../db";
+import { Router } from "express";
 import getDayController from "../controllers/day/getDay";
 import createDayController from "../controllers/day/createDay";
 
