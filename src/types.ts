@@ -46,3 +46,11 @@ export type RutinaPropertys = {
     }[]
   }[]
 }
+
+export type changeEjercicioPropertys = {
+  id: string,
+  name?: string,
+  series?: number,
+  repeticiones?: string,
+  cargas?: string
+}
