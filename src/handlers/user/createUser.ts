@@ -15,6 +15,7 @@ export default async function createUser(propertys: userPropertys) {
     usuario,
   } = propertys;
   const gym: any = await getOneGymName(gymName);
+  if (!gym) throw new Error('Gym no registrado')
   const newUser = await User.create({
     name,
     surname,
