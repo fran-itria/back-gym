@@ -54,3 +54,14 @@ export type changeEjercicioPropertys = {
   repeticiones?: string,
   cargas?: string
 }
+
+export type CalentamientoPropertys = RutinaPropertys
+
+export type createOneDayCalentamientoProps = {
+  calentamientoId: string;
+  dias: {
+    series: string,
+    repeticiones: string,
+    name: string
+  }[]
+};
