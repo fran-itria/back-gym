@@ -4,6 +4,7 @@ import gym from './routes/gym';
 import rutina from './routes/rutina';
 import day from './routes/day';
 import ejercicio from './routes/ejercicio';
+import calentamiento from './routes/calentamiento';
 const cors = require('cors')
 const morgan = require('morgan')
 const server = express()
@@ -17,6 +18,7 @@ server.use('/gym', gym)
 server.use('/rutina', rutina)
 server.use('/day', day)
 server.use('/ejercicio', ejercicio)
+server.use('/calentamiento', calentamiento)
 
 
 module.exports = server
