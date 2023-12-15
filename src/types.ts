@@ -75,3 +75,11 @@ export type createMeal = {
   moment: Moment
   food: string
 }
+
+export type updateMealProps = {
+  id: UUID
+  fecha: string
+  time: string
+  moment: Moment
+  food: string
+}
