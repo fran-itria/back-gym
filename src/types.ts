@@ -1,3 +1,4 @@
+import { UUID } from "crypto";
 import { Request, Response } from "express";
 
 export type request = Request;
@@ -65,3 +66,12 @@ export type createOneDayCalentamientoProps = {
     name: string
   }[]
 };
+
+type Moment = 'Desayuno' | 'Media mañana' | 'Almuerzo' | 'Merienda' | 'Cena'
+export type createMeal = {
+  userId: UUID
+  fecha: string
+  time: string
+  moment: Moment
+  food: string
+}
