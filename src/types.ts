@@ -83,3 +83,17 @@ export type updateMealProps = {
   moment: Moment
   food: string
 }
+
+export type changeUserProps = {
+  id: string,
+  name?: string,
+  surname?: string,
+  dni?: number,
+  edad?: number,
+  email?: string,
+  usuario?: string,
+  phone?: number,
+  contactEmergency?: number,
+  admin?: boolean,
+  pay?: boolean
+}
