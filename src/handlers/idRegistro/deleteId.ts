@@ -1,10 +1,7 @@
 import { IdRegistro } from "../../db"
+import { getOneId } from "./getOneId"
 
 export const deleteId = async (id: string) => {
-    try {
-        await IdRegistro.destroy({ where: { id } })
-        return true
-    } catch (error) {
-        return error
-    }
+    await getOneId(id)
+    await IdRegistro.destroy({ where: { id } })
 }
