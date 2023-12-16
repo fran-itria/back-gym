@@ -30,7 +30,7 @@ export type ejerciciosPropertys = {
 
 export type OneDayrutinaPropertys = {
   rutinaId: string;
-  dias: {
+  dia: {
     series: string,
     repeticiones: string,
     name: string
@@ -60,7 +60,7 @@ export type CalentamientoPropertys = RutinaPropertys
 
 export type createOneDayCalentamientoProps = {
   calentamientoId: string;
-  dias: {
+  dia: {
     series: string,
     repeticiones: string,
     name: string
