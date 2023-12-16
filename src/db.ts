@@ -8,6 +8,7 @@ import ejercicio from './models/Ejercicio';
 import calentamiento from './models/Calentamiento'
 import idRegistro from './models/IdRegistro'
 import comidas from './models/Comidas'
+import ejercicioExtra from './models/EjercicioExtra'
 
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
@@ -28,8 +29,9 @@ ejercicio(sequelize)
 calentamiento(sequelize)
 idRegistro(sequelize)
 comidas(sequelize)
+ejercicioExtra(sequelize)
 
-const { User, Gym, Rutina, Day, Ejercicio, Calentamiento, IdRegistro, Comidas } = sequelize.models
+const { User, Gym, Rutina, Day, Ejercicio, Calentamiento, IdRegistro, Comidas, EjercicioExtra } = sequelize.models
 
 // GYM - USER
 Gym.hasMany(User, { foreignKey: 'GymId' })
@@ -57,6 +59,8 @@ Ejercicio.belongsTo(Day, { foreignKey: 'DayId' })
 User.hasMany(Comidas, { foreignKey: 'UserId' })
 Comidas.belongsTo(User, { foreignKey: 'UserId' })
 
+// USER - EJERCICIO EXTRA
 
-export { User, Gym, Rutina, Day, Ejercicio, Calentamiento, IdRegistro, Comidas }
+
+export { User, Gym, Rutina, Day, Ejercicio, Calentamiento, IdRegistro, Comidas, EjercicioExtra }
 export const conn = sequelize
