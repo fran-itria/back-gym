@@ -60,7 +60,8 @@ User.hasMany(Comidas, { foreignKey: 'UserId' })
 Comidas.belongsTo(User, { foreignKey: 'UserId' })
 
 // USER - EJERCICIO EXTRA
-
+User.hasMany(EjercicioExtra, { foreignKey: "UserId" })
+EjercicioExtra.belongsTo(User, { foreignKey: "UserId" })
 
 export { User, Gym, Rutina, Day, Ejercicio, Calentamiento, IdRegistro, Comidas, EjercicioExtra }
 export const conn = sequelize
