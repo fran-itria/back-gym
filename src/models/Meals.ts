@@ -10,10 +10,10 @@ export default function (sequelize: Sequelize) {
                 defaultValue: DataTypes.UUIDV4()
             },
             date: {
-                type: DataTypes.STRING,
+                type: DataTypes.DATEONLY,
                 allowNull: false
             },
-            time: {
+            hour: {
                 type: DataTypes.TIME,
                 allowNull: false
             },

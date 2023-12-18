@@ -72,7 +72,7 @@ type Moment = 'Desayuno' | 'Media mañana' | 'Almuerzo' | 'Merienda' | 'Cena'
 export type createMeal = {
   userId: UUID
   date: string
-  time: string
+  hour: string
   moment: Moment
   food: string
 }
