@@ -6,7 +6,7 @@ import { getOneUserId } from "../user/getOneUserId";
 
 export const createCalentamiento = async (props: RutinaPropertys) => {
     const { userId, dias } = props
-    const user: any = await getOneUserId({ id: userId })
+    const user: any = await getOneUserId(userId)
     if (!user) throw new Error('Usuario no encontrado')
     const newCalentamiento: any = await Calentamiento.create()
     dias.forEach(async (dia) => {

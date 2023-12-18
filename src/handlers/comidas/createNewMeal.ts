@@ -4,7 +4,7 @@ import { getOneUserId } from "../user/getOneUserId"
 
 export const createNewMeal = async (props: createMeal) => {
     const { userId, fecha, time, moment, food } = props
-    const user: any = await getOneUserId({ id: userId })
+    const user: any = await getOneUserId(userId)
     if (!user) throw new Error('Usuario no encontrado')
     const newComida = await Comidas.create({
         fecha,

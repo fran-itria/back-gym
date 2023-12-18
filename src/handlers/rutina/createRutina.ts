@@ -5,7 +5,7 @@ import { createEjercicios } from "../ejercicio/createEjercicios";
 import { getOneUserId } from "../user/getOneUserId";
 
 export const createRutina = async ({ userId, dias }: RutinaPropertys) => {
-    const user: any = await getOneUserId({ id: userId })
+    const user: any = await getOneUserId(userId)
     if (!user) throw new Error('Usuario no encontrado')
     const newRutina: any = await Rutina.create()
     dias.forEach(async (dia) => {

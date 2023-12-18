@@ -1,6 +1,6 @@
 import { Calentamiento, Comidas, ExtraTraining, Gym, Rutina, User } from "../../db";
 
-export const getOneUserId = async ({ id }: { id: string }) => {
+export const getOneUserId = async (id: string) => {
   const user = await User.findByPk(id, {
     include: [
       {
