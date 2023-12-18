@@ -3,10 +3,12 @@ import getEjerciciosController from "../controllers/ejercicio/getEjercicios";
 import createEjerciciosController from "../controllers/ejercicio/createEjercicios";
 import createOneEjercicioController from "../controllers/ejercicio/createOneEjercicio";
 import updateEjercicioController from "../controllers/ejercicio/updateEjercicio";
+import getOneEjerciciosController from "../controllers/ejercicio/getOneEjercicio";
 
 const ejercicio = Router();
 
 ejercicio.get("", getEjerciciosController);
+ejercicio.get("/:id", getOneEjerciciosController);
 ejercicio.post("/createOneEjercicio", createOneEjercicioController);
 ejercicio.post("/createEjercicios", createEjerciciosController);
 ejercicio.put("", updateEjercicioController)
