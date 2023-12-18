@@ -11,8 +11,8 @@ export const createWarmUp = async (props: RoutinePropertys) => {
     const newWarmUp: any = await WarmUp.create()
     days.forEach(async (day) => {
         const newDay: any = await createDay()
-        const ejercicios = await createExercises(day.exercises)
-        newDay.addExercise(ejercicios)
+        const exercises = await createExercises(day.exercises)
+        await newDay.addExercise(exercises)
         await newWarmUp.addDay(newDay);
     });
     await user.addWarmUp(newWarmUp)

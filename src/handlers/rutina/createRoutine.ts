@@ -11,7 +11,7 @@ export const createRoutine = async ({ userId, days }: RoutinePropertys) => {
     days.forEach(async (day) => {
         const newDay: any = await createDay()
         const exercises = await createExercises(day.exercises)
-        newDay.addExercise(exercises)
+        await newDay.addExercise(exercises)
         await newRutina.addDay(newDay);
     });
     await user.addRoutine(newRutina)
