@@ -49,6 +49,10 @@ export default function (sequelize: Sequelize) {
             pay: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
+            },
+            ban: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
             }
         },
         {
