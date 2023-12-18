@@ -9,10 +9,10 @@ export default async function createUser(propertys: userPropertys) {
     surname,
     contactEmergency,
     dni,
-    edad,
+    age,
     email,
     phone,
-    usuario,
+    user,
   } = propertys;
   const gym: any = await getOneGymName(gymName);
   if (!gym) throw new Error('Gym no registrado')
@@ -21,10 +21,10 @@ export default async function createUser(propertys: userPropertys) {
     surname,
     contactEmergency,
     dni,
-    edad,
+    age,
     email,
     phone,
-    usuario,
+    user,
   });
   await gym.addUser(newUser);
   return newUser;

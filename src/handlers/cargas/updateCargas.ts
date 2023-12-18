@@ -1,11 +1,11 @@
-import { getOneCargas } from "./getOneCargas"
+import { getOneLoads } from "./getOneLoads"
 
-export const updateCargas = async (props: { id: string, newCargas: string }) => {
-    const { id, newCargas } = props
-    const carga = await getOneCargas(id)
-    if (!carga) throw new Error('No se encuentra esta carga')
-    await carga.update({
-        cargas: newCargas
+export const updateCargas = async (props: { id: string, newLoads: string }) => {
+    const { id, newLoads } = props
+    const load = await getOneLoads(id)
+    if (!load) throw new Error('No se encuentra esta carga')
+    await load.update({
+        loads: newLoads
     })
-    return carga
+    return load
 }   

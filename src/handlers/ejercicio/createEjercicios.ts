@@ -1,8 +1,8 @@
-import { Ejercicio } from "../../db"
-import { ejerciciosPropertys } from "../../types"
+import { Exercise } from "../../db"
+import { exercisesPropertys } from "../../types"
 
-export const createEjercicios = async (ejercicios: ejerciciosPropertys) => {
-    const moreEjercicios = await Ejercicio.bulkCreate(ejercicios.reverse())
-    if (!moreEjercicios) throw new Error('No se pudieron crear los ejercicios')
-    return moreEjercicios
+export const createEjercicios = async (exercises: exercisesPropertys) => {
+    const moreExercises = await Exercise.bulkCreate(exercises)
+    if (!moreExercises) throw new Error('No se pudieron crear los ejercicios')
+    return moreExercises
 }

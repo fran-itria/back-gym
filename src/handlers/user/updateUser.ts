@@ -2,19 +2,19 @@ import { changeUserProps } from "../../types";
 import { getOneUserId } from "./getOneUserId";
 
 export const updateUser = async (changes: changeUserProps) => {
-    const { id, admin, contactEmergency, dni, edad, email, name, pay, phone, surname, usuario } = changes
-    const user: any = await getOneUserId(id)
-    await user.update({
+    const { id, admin, contactEmergency, dni, age, email, name, pay, phone, surname, user } = changes
+    const existUser: any = await getOneUserId(id)
+    await existUser.update({
         admin,
         contactEmergency,
         dni,
-        edad,
+        age,
         email,
         name,
         pay,
         phone,
         surname,
-        usuario
+        user
     })
     return user
 }

@@ -2,14 +2,14 @@ require('dotenv').config();
 import { Sequelize } from 'sequelize'
 import user from "./models/User";
 import gym from './models/Gym'
-import rutina from './models/Rutina';
+import routine from './models/Routine';
 import day from './models/Day';
-import ejercicio from './models/Ejercicio';
-import calentamiento from './models/Calentamiento'
+import exercise from './models/Exercise';
+import warmUp from './models/WarmUp'
 import idRegistro from './models/IdRegistro'
-import comidas from './models/Comidas'
+import meals from './models/Meals'
 import extraTraining from './models/ExtraTraining'
-import cargas from "./models/Cargas"
+import loads from "./models/Loads"
 
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
@@ -24,49 +24,49 @@ const sequelize = new Sequelize(
 
 user(sequelize)
 gym(sequelize)
-rutina(sequelize)
+routine(sequelize)
 day(sequelize)
-ejercicio(sequelize)
-calentamiento(sequelize)
+exercise(sequelize)
+warmUp(sequelize)
 idRegistro(sequelize)
-comidas(sequelize)
+meals(sequelize)
 extraTraining(sequelize)
-cargas(sequelize)
+loads(sequelize)
 
-const { User, Gym, Rutina, Day, Ejercicio, Calentamiento, IdRegistro, Comidas, ExtraTraining, Cargas } = sequelize.models
+const { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads } = sequelize.models
 
 // GYM - USER
 Gym.hasMany(User, { foreignKey: 'GymId' })
 User.belongsTo(Gym, { foreignKey: 'GymId' })
 
 // USER - RUTINA
-User.hasMany(Rutina, { foreignKey: 'UserId' })
-Rutina.belongsTo(User, { foreignKey: 'UserId' })
+User.hasMany(Routine, { foreignKey: 'UserId' })
+Routine.belongsTo(User, { foreignKey: 'UserId' })
 // RUTINA - DAY
-Rutina.hasMany(Day, { foreignKey: 'RutinaId' })
-Day.belongsTo(Rutina, { foreignKey: 'RutinaId' })
+Routine.hasMany(Day, { foreignKey: 'RoutineId' })
+Day.belongsTo(Routine, { foreignKey: 'RoutineId' })
 
 // USER - CALENTAMIENTO
-User.hasMany(Calentamiento, { foreignKey: 'UserId' })
-Calentamiento.belongsTo(User, { foreignKey: 'UserId' })
+User.hasMany(WarmUp, { foreignKey: 'UserId' })
+WarmUp.belongsTo(User, { foreignKey: 'UserId' })
 // CALENTAMIENTO - DAY
-Calentamiento.hasMany(Day, { foreignKey: 'CalentamientoId' })
-Day.belongsTo(Calentamiento, { foreignKey: 'CalentamientoId' })
+WarmUp.hasMany(Day, { foreignKey: 'WarmUpId' })
+Day.belongsTo(WarmUp, { foreignKey: 'WarmUpId' })
 
 // DAY - EJERCICIO
-Day.hasMany(Ejercicio, { foreignKey: 'DayId' })
-Ejercicio.belongsTo(Day, { foreignKey: 'DayId' })
+Day.hasMany(Exercise, { foreignKey: 'DayId' })
+Exercise.belongsTo(Day, { foreignKey: 'DayId' })
 // EJERCICIO - CARGAS
-Ejercicio.hasMany(Cargas, { foreignKey: "EjercicioId" })
-Cargas.belongsTo(Ejercicio, { foreignKey: "EjercicioId" })
+Exercise.hasMany(Loads, { foreignKey: "ExerciseId" })
+Loads.belongsTo(Exercise, { foreignKey: "ExerciseId" })
 
 // USER - COMIDAS
-User.hasMany(Comidas, { foreignKey: 'UserId' })
-Comidas.belongsTo(User, { foreignKey: 'UserId' })
+User.hasMany(Meals, { foreignKey: 'UserId' })
+Meals.belongsTo(User, { foreignKey: 'UserId' })
 
 // USER - EJERCICIO EXTRA
 User.hasMany(ExtraTraining, { foreignKey: "UserId" })
 ExtraTraining.belongsTo(User, { foreignKey: "UserId" })
 
-export { User, Gym, Rutina, Day, Ejercicio, Calentamiento, IdRegistro, Comidas, ExtraTraining, Cargas }
+export { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads }
 export const conn = sequelize

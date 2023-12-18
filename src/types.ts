@@ -10,40 +10,40 @@ export type userPropertys = {
   surname: string;
   contactEmergency: number;
   dni: number;
-  edad: number;
+  age: number;
   email: string;
   phone: number;
-  usuario: string;
+  user: string;
 };
 
 export type ejercicioPropertys = {
   name: string;
   series: string;
-  repeticiones: string;
+  reps: string;
 };
 
-export type ejerciciosPropertys = {
+export type exercisesPropertys = {
   name: string;
   series: string;
-  repeticiones: string;
+  reps: string;
 }[];
 
 export type OneDayrutinaPropertys = {
-  rutinaId: UUID;
-  dia: {
+  routineId: UUID;
+  day: {
     series: string,
-    repeticiones: string,
+    reps: string,
     name: string
   }[]
 };
 
-export type RutinaPropertys = {
+export type RoutinePropertys = {
   userId: UUID;
-  dias: {
-    ejercicios: {
+  days: {
+    exercises: {
       name: string
       series: string,
-      repeticiones: string,
+      reps: string,
     }[]
   }[]
 }
@@ -52,17 +52,17 @@ export type changeEjercicioPropertys = {
   id: UUID,
   name?: string,
   series?: number,
-  repeticiones?: string,
-  cargas?: string
+  reps?: string,
+  loads?: string
 }
 
-export type CalentamientoPropertys = RutinaPropertys
+export type CalentamientoPropertys = RoutinePropertys
 
 export type createOneDayCalentamientoProps = {
-  calentamientoId: UUID;
-  dia: {
+  warmUpId: UUID;
+  day: {
     series: string,
-    repeticiones: string,
+    reps: string,
     name: string
   }[]
 };
@@ -71,7 +71,7 @@ type Moment = 'Desayuno' | 'Media mañana' | 'Almuerzo' | 'Merienda' | 'Cena'
 
 export type createMeal = {
   userId: UUID
-  fecha: string
+  date: string
   time: string
   moment: Moment
   food: string
@@ -79,7 +79,7 @@ export type createMeal = {
 
 export type updateMealProps = {
   id: UUID
-  fecha: string
+  date: string
   time: string
   moment: Moment
   food: string
@@ -90,9 +90,9 @@ export type changeUserProps = {
   name?: string,
   surname?: string,
   dni?: number,
-  edad?: number,
+  age?: number,
   email?: string,
-  usuario?: string,
+  user?: string,
   phone?: number,
   contactEmergency?: number,
   admin?: boolean,

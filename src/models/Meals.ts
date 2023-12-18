@@ -2,14 +2,14 @@ import { DataTypes, Sequelize } from "sequelize";
 
 export default function (sequelize: Sequelize) {
     sequelize.define(
-        'Comidas',
+        'Meals',
         {
             id: {
                 type: DataTypes.UUID,
                 primaryKey: true,
                 defaultValue: DataTypes.UUIDV4()
             },
-            fecha: {
+            date: {
                 type: DataTypes.STRING,
                 allowNull: false
             },

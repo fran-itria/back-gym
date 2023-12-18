@@ -21,7 +21,7 @@ export default function (sequelize: Sequelize) {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            edad: {
+            age: {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
@@ -30,7 +30,7 @@ export default function (sequelize: Sequelize) {
                 allowNull: false,
                 unique: true
             },
-            usuario: {
+            user: {
                 type: DataTypes.STRING,
                 allowNull: false
             },

@@ -1,15 +1,15 @@
-import { Calentamiento } from "../../db";
+import { WarmUp } from "../../db";
 import { createOneDayCalentamientoProps } from "../../types";
 import { createDay } from "../day/createDay";
 import { createEjercicios } from "../ejercicio/createEjercicios";
 
 export const createOneDayCalentamiento = async (props: createOneDayCalentamientoProps) => {
-    const { calentamientoId, dia } = props;
-    const calentamiento: any = await Calentamiento.findByPk(calentamientoId)
-    if (!calentamiento) throw new Error("Rutina no encontrada");
-    const day: any = await createDay();
-    const ejercicios: any = await createEjercicios(dia)
-    await day.addEjercicio(ejercicios);
-    await calentamiento.addDay(day)
-    return calentamiento;
+    const { warmUpId, day } = props;
+    const warmUp: any = await WarmUp.findByPk(warmUpId)
+    if (!warmUp) throw new Error("Rutina no encontrada");
+    const newDay: any = await createDay();
+    const exercises: any = await createEjercicios(day)
+    await newDay.addExercise(exercises);
+    await warmUp.addDay(newDay)
+    return warmUp;
 }

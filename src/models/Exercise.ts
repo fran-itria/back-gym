@@ -2,7 +2,7 @@ import { DataTypes, Sequelize } from "sequelize";
 
 export default function (sequelize: Sequelize) {
     sequelize.define(
-        'Ejercicio',
+        'Exercise',
         {
             id: {
                 type: DataTypes.UUID,
@@ -17,7 +17,7 @@ export default function (sequelize: Sequelize) {
                 type: DataTypes.INTEGER,
                 allowNull: false
             },
-            repeticiones: {
+            reps: {
                 type: DataTypes.STRING,
                 allowNull: false
             }

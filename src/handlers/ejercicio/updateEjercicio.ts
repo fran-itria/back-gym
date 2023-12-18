@@ -1,24 +1,24 @@
-import { Ejercicio } from "../../db";
+import { Exercise } from "../../db";
 import { changeEjercicioPropertys } from "../../types";
 
 export const updateEjercicio = async (changes: changeEjercicioPropertys) => {
-    const { id, cargas, name, repeticiones, series } = changes
-    const exercise: any = await Ejercicio.findByPk(id)
+    const { id, loads, name, reps, series } = changes
+    const exercise: any = await Exercise.findByPk(id)
     if (!exercise) throw new Error('Ejercicio no encontrado')
     if (exercise.cargas != null) {
-        const updateCargas = exercise.cargas.concat(cargas)
+        const updateCargas = exercise.cargas.concat(loads)
         await exercise.update({
             cargas: updateCargas,
             name,
-            repeticiones,
+            reps,
             series
         })
     } else {
-        const firstCargas = [cargas]
+        const firstCargas = [loads]
         await exercise.update({
             cargas: firstCargas,
             name,
-            repeticiones,
+            reps,
             series
         })
     }

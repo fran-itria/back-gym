@@ -1,15 +1,15 @@
-import { Rutina } from "../../db";
+import { Routine } from "../../db";
 import { OneDayrutinaPropertys } from "../../types";
 import { createDay } from "../day/createDay";
 import { createEjercicios } from "../ejercicio/createEjercicios";
 
 export const createOneDayRutina = async (propertys: OneDayrutinaPropertys) => {
-  const { rutinaId, dia } = propertys;
-  const rutina: any = await Rutina.findByPk(rutinaId)
-  if (!rutina) throw new Error("Rutina no encontrada");
-  const day: any = await createDay();
-  const ejercicios: any = await createEjercicios(dia)
-  await day.addEjercicio(ejercicios);
-  await rutina.addDay(day)
-  return rutina;
+  const { routineId, day } = propertys;
+  const routine: any = await Routine.findByPk(routineId)
+  if (!routine) throw new Error("Rutina no encontrada");
+  const existDay: any = await createDay();
+  const exercises: any = await createEjercicios(day)
+  await existDay.addExercise(exercises);
+  await routine.addDay(existDay)
+  return routine;
 };

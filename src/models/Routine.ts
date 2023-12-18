@@ -2,7 +2,7 @@ import { DataTypes, Sequelize } from "sequelize";
 
 export default function (sequelize: Sequelize) {
     sequelize.define(
-        'Rutina',
+        'Routine',
         {
             id: {
                 type: DataTypes.UUID,

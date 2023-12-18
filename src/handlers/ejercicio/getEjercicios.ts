@@ -1,13 +1,13 @@
-import { Cargas, Ejercicio } from "../../db";
+import { Loads, Exercise } from "../../db";
 
 export const getEjercicios = async () => {
-  const ejercicios = await Ejercicio.findAll({
+  const exercises = await Exercise.findAll({
     include: [
       {
-        model: Cargas
+        model: Loads
       }
     ]
   });
-  if (ejercicios.length == 0) throw new Error("No hay ejercicos creados");
-  return ejercicios;
+  if (exercises.length == 0) throw new Error("No hay ejercicos creados");
+  return exercises;
 };

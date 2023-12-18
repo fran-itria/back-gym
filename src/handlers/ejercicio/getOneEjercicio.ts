@@ -1,10 +1,10 @@
-import { Cargas, Ejercicio } from "../../db"
+import { Loads, Exercise } from "../../db"
 
 export const getOneEjercicio = async (id: string) => {
-    const exercise = await Ejercicio.findByPk(id, {
+    const exercise = await Exercise.findByPk(id, {
         include: [
             {
-                model: Cargas
+                model: Loads
             }
         ]
     })

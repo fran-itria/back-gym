@@ -1,11 +1,11 @@
-import { Day, Rutina } from "../../db";
+import { Day, Routine } from "../../db";
 
-export default async function getRutinas() {
-    const rutinas: any = await Rutina.findAll({
+export default async function getRoutines() {
+    const routines: any = await Routine.findAll({
         include: {
             model: Day
         }
     })
-    if (rutinas.length == 0) throw new Error('No hay rutinas')
-    return rutinas
+    if (routines.length == 0) throw new Error('No hay rutinas')
+    return routines
 }

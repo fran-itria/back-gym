@@ -1,19 +1,19 @@
-import { Rutina } from "../../db";
-import { RutinaPropertys } from "../../types";
+import { Routine } from "../../db";
+import { RoutinePropertys } from "../../types";
 import { createDay } from "../day/createDay"
 import { createEjercicios } from "../ejercicio/createEjercicios";
 import { getOneUserId } from "../user/getOneUserId";
 
-export const createRutina = async ({ userId, dias }: RutinaPropertys) => {
+export const createRutina = async ({ userId, days }: RoutinePropertys) => {
     const user: any = await getOneUserId(userId)
     if (!user) throw new Error('Usuario no encontrado')
-    const newRutina: any = await Rutina.create()
-    dias.forEach(async (dia) => {
+    const newRutina: any = await Routine.create()
+    days.forEach(async (day) => {
         const newDay: any = await createDay()
-        const ejercicios = await createEjercicios(dia.ejercicios)
-        newDay.addEjercicio(ejercicios)
+        const exercises = await createEjercicios(day.exercises)
+        newDay.addExercise(exercises)
         await newRutina.addDay(newDay);
     });
-    await user.addRutina(newRutina)
+    await user.addRoutine(newRutina)
     return newRutina
 }

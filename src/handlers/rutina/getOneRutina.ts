@@ -1,16 +1,22 @@
-import { Day, Ejercicio, Rutina } from "../../db";
+import { Day, Exercise, Loads, Routine } from "../../db";
 
 export default async function getOneRutina(id: string) {
-    const rutina: any = await Rutina.findByPk(id, {
+    const routine: any = await Routine.findByPk(id, {
         include: {
             model: Day,
             include: [
                 {
-                    model: Ejercicio
-                }
-            ]
+                    model: Exercise,
+                    include: [
+                        {
+                            model: Loads
+                        }
+                    ]
+                },
+            ],
+            attributes: ['id', 'WarmUpId']
         }
     })
-    if (!rutina) throw new Error('No se encuentra la rutina')
-    return rutina
+    if (!routine) throw new Error('No se encuentra la rutina')
+    return routine
 }

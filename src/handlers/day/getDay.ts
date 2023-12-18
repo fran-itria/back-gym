@@ -1,11 +1,11 @@
-import { Day, Ejercicio } from "../../db";
+import { Day, Exercise } from "../../db";
 
 export const getDay = async () => {
   const days = await Day.findAll({
     include: [
       {
-        model: Ejercicio,
-        attributes: ["name", "series", "repeticiones", "cargas"],
+        model: Exercise,
+        attributes: ["name", "series", "reps"],
       },
     ],
   });

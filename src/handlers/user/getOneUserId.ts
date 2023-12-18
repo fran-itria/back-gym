@@ -1,4 +1,4 @@
-import { Calentamiento, Comidas, ExtraTraining, Gym, Rutina, User } from "../../db";
+import { WarmUp, Meals, ExtraTraining, Gym, Routine, User } from "../../db";
 
 export const getOneUserId = async (id: string) => {
   const user = await User.findByPk(id, {
@@ -8,13 +8,13 @@ export const getOneUserId = async (id: string) => {
         attributes: ["name"]
       },
       {
-        model: Rutina,
+        model: Routine,
       },
       {
-        model: Calentamiento,
+        model: WarmUp,
       },
       {
-        model: Comidas
+        model: Meals
       },
       {
         model: ExtraTraining

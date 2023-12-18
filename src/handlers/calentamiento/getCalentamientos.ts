@@ -1,17 +1,17 @@
-import { Calentamiento, Day, Ejercicio } from "../../db"
+import { WarmUp, Day, Exercise } from "../../db"
 
 export const getCalentamientos = async () => {
-    const calentamientos = await Calentamiento.findAll({
+    const warmUps = await WarmUp.findAll({
         include: {
             model: Day,
             include: [
                 {
-                    model: Ejercicio
+                    model: Exercise
                 },
             ],
-            attributes: ['id', 'CalentamientoId']
+            attributes: ['id', 'WarmUpId']
         }
     })
-    if (calentamientos.length == 0) throw new Error('No hay calentamientos para este usuario')
-    return calentamientos
+    if (warmUps.length == 0) throw new Error('No hay calentamientos para este usuario')
+    return warmUps
 }

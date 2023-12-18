@@ -1,7 +1,7 @@
-import { Cargas } from "../../db"
-import { getOneCargas } from "./getOneCargas"
+import { Loads } from "../../db"
+import { getOneLoads } from "./getOneLoads"
 
-export const deleteCargas = async (id: string) => {
-    await getOneCargas(id)
-    await Cargas.destroy({ where: { id } })
+export const deleteLoads = async (id: string) => {
+    await getOneLoads(id)
+    await Loads.destroy({ where: { id } })
 }

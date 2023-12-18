@@ -1,20 +1,20 @@
-import { Calentamiento } from "../../db";
-import { RutinaPropertys } from "../../types";
+import { WarmUp } from "../../db";
+import { RoutinePropertys } from "../../types";
 import { createDay } from "../day/createDay";
 import { createEjercicios } from "../ejercicio/createEjercicios";
 import { getOneUserId } from "../user/getOneUserId";
 
-export const createCalentamiento = async (props: RutinaPropertys) => {
-    const { userId, dias } = props
+export const createCalentamiento = async (props: RoutinePropertys) => {
+    const { userId, days } = props
     const user: any = await getOneUserId(userId)
     if (!user) throw new Error('Usuario no encontrado')
-    const newCalentamiento: any = await Calentamiento.create()
-    dias.forEach(async (dia) => {
+    const newWarmUp: any = await WarmUp.create()
+    days.forEach(async (day) => {
         const newDay: any = await createDay()
-        const ejercicios = await createEjercicios(dia.ejercicios)
-        newDay.addEjercicio(ejercicios)
-        await newCalentamiento.addDay(newDay);
+        const ejercicios = await createEjercicios(day.exercises)
+        newDay.addExercise(ejercicios)
+        await newWarmUp.addDay(newDay);
     });
-    await user.addCalentamiento(newCalentamiento)
-    return newCalentamiento
+    await user.addWarmUp(newWarmUp)
+    return newWarmUp
 }

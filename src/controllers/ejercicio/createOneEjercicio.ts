@@ -5,12 +5,12 @@ export default async function createOneEjercicioController(
   req: request,
   res: response
 ) {
-  const { ejercicioName, series, repeticiones } = req.body;
+  const { exerciseName, series, reps } = req.body;
   try {
     const newEjercicio = await createOneEjercicio({
-      name: ejercicioName,
+      name: exerciseName,
       series,
-      repeticiones,
+      reps,
     });
     res.status(200).json(newEjercicio);
   } catch (error) {

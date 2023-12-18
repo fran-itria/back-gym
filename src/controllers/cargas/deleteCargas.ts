@@ -1,10 +1,10 @@
-import { deleteCargas } from "../../handlers/cargas/deleteCargas";
+import { deleteLoads } from "../../handlers/cargas/deleteCargas";
 import { request, response } from "../../types";
 
 
 export default async function deleteCargasController(req: request, res: response) {
     try {
-        await deleteCargas(req.body.id)
+        await deleteLoads(req.body.id)
         res.status(200).json({ Message: 'Carga eliminada correctamente' })
     } catch (error) {
         console.log(error)
