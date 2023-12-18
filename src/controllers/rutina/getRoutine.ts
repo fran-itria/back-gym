@@ -1,9 +1,9 @@
-import getRutinas from "../../handlers/rutina/getRutinas";
+import getRoutine from "../../handlers/rutina/getRoutine";
 import { request, response } from "../../types";
 
-export default async function getRutinasController(_req: request, res: response) {
+export default async function getRoutineController(_req: request, res: response) {
     try {
-        const rutinas = await getRutinas()
+        const rutinas = await getRoutine()
         res.status(200).json(rutinas)
     } catch (error) {
         console.log(error)

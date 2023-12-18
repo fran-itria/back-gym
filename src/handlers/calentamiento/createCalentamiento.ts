@@ -1,7 +1,7 @@
 import { WarmUp } from "../../db";
 import { RoutinePropertys } from "../../types";
 import { createDay } from "../day/createDay";
-import { createEjercicios } from "../ejercicio/createEjercicios";
+import { createExercises } from "../ejercicio/createExercises";
 import { getOneUserId } from "../user/getOneUserId";
 
 export const createCalentamiento = async (props: RoutinePropertys) => {
@@ -11,7 +11,7 @@ export const createCalentamiento = async (props: RoutinePropertys) => {
     const newWarmUp: any = await WarmUp.create()
     days.forEach(async (day) => {
         const newDay: any = await createDay()
-        const ejercicios = await createEjercicios(day.exercises)
+        const ejercicios = await createExercises(day.exercises)
         newDay.addExercise(ejercicios)
         await newWarmUp.addDay(newDay);
     });

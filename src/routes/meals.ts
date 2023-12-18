@@ -5,12 +5,11 @@ import createNewMealController from "../controllers/comidas/createNewMeal";
 import updateMealController from "../controllers/comidas/updateMeal";
 import deleteMealController from "../controllers/comidas/deleteMeal";
 
-const comidas = Router()
+const meals = Router()
+meals.get('', getAllMealsController)
+meals.get('/:id', getOneMealController)
+meals.post('', createNewMealController)
+meals.put('', updateMealController)
+meals.delete('', deleteMealController)
 
-comidas.get('', getAllMealsController)
-comidas.get('/:id', getOneMealController)
-comidas.post('', createNewMealController)
-comidas.put('', updateMealController)
-comidas.delete('', deleteMealController)
-
-export default comidas
+export default meals

@@ -1,13 +1,13 @@
-import { createOneEjercicio } from "../../handlers/ejercicio/createOneEjercicio";
+import { createOneExercise } from "../../handlers/ejercicio/createOneExercise";
 import { request, response } from "../../types";
 
-export default async function createOneEjercicioController(
+export default async function createOneExerciseController(
   req: request,
   res: response
 ) {
   const { exerciseName, series, reps } = req.body;
   try {
-    const newEjercicio = await createOneEjercicio({
+    const newEjercicio = await createOneExercise({
       name: exerciseName,
       series,
       reps,

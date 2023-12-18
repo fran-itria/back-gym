@@ -2,7 +2,7 @@ import { getOneLoads } from "../../handlers/cargas/getOneLoads";
 import { request, response } from "../../types";
 
 
-export default async function getOneCargasController(req: request, res: response) {
+export default async function getOneLoadsController(req: request, res: response) {
     try {
         const loads = await getOneLoads(req.params.id)
         res.status(200).json(loads)

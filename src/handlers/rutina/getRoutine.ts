@@ -1,6 +1,6 @@
 import { Day, Routine } from "../../db";
 
-export default async function getRoutines() {
+export default async function getRoutine() {
     const routines: any = await Routine.findAll({
         include: {
             model: Day

@@ -1,12 +1,12 @@
-import { getEjercicios } from "../../handlers/ejercicio/getEjercicios";
+import { getExercises } from "../../handlers/ejercicio/getExercise";
 import { request, response } from "../../types";
 
-export default async function getEjerciciosController(
+export default async function getExercisesController(
   _req: request,
   res: response
 ) {
   try {
-    const ejercicios = await getEjercicios();
+    const ejercicios = await getExercises();
     res.status(200).json(ejercicios);
   } catch (error) {
     console.log(error);

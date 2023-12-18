@@ -1,6 +1,6 @@
 import { Day, Exercise, Loads, Routine } from "../../db";
 
-export default async function getOneRutina(id: string) {
+export default async function getOneRoutine(id: string) {
     const routine: any = await Routine.findByPk(id, {
         include: {
             model: Day,

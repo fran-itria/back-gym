@@ -1,13 +1,13 @@
 import express from 'express'
 import user from './routes/user';
 import gym from './routes/gym';
-import rutina from './routes/rutina';
+import routine from './routes/routine';
 import day from './routes/day';
-import ejercicio from './routes/ejercicio';
-import calentamiento from './routes/calentamiento';
+import exercise from './routes/exercise';
+import warmUp from './routes/warmUp';
 import id from './routes/idRegistro';
-import comidas from './routes/comidas';
-import cargas from './routes/cargas';
+import meals from './routes/meals';
+import loads from './routes/loads';
 import extra from './routes/extra';
 const cors = require('cors')
 const morgan = require('morgan')
@@ -19,13 +19,13 @@ server.use(express.json())
 server.use(cors())
 server.use('/user', user)
 server.use('/gym', gym)
-server.use('/rutina', rutina)
+server.use('/rutina', routine)
 server.use('/day', day)
-server.use('/ejercicio', ejercicio)
-server.use('/cargas', cargas)
-server.use('/calentamiento', calentamiento)
+server.use('/ejercicio', exercise)
+server.use('/cargas', loads)
+server.use('/calentamiento', warmUp)
 server.use('/idregistro', id)
-server.use('/comidas', comidas)
+server.use('/comidas', meals)
 server.use('/extra', extra)
 
 

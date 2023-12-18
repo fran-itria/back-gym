@@ -1,10 +1,10 @@
-import { createEjercicios } from "../../handlers/ejercicio/createEjercicios";
+import { createExercises } from "../../handlers/ejercicio/createExercises";
 import { request, response } from "../../types";
 
-export default async function createEjerciciosController(req: request, res: response) {
+export default async function createExercisesController(req: request, res: response) {
     const { dias } = req.body
     try {
-        const ejercicios = await createEjercicios(dias)
+        const ejercicios = await createExercises(dias)
         res.status(200).json(ejercicios)
     } catch (error) {
         console.log(error)

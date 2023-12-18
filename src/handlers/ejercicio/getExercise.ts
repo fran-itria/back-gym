@@ -1,6 +1,6 @@
 import { Loads, Exercise } from "../../db";
 
-export const getEjercicios = async () => {
+export const getExercises = async () => {
   const exercises = await Exercise.findAll({
     include: [
       {

@@ -1,9 +1,9 @@
-import { createRutina } from "../../handlers/rutina/createRutina";
+import { createRoutine } from "../../handlers/rutina/createRoutine";
 import { request, response } from "../../types";
 
-export default async function createRutinaController(req: request, res: response) {
+export default async function createRoutineController(req: request, res: response) {
     try {
-        const newRutina = await createRutina(req.body)
+        const newRutina = await createRoutine(req.body)
         res.status(200).json(newRutina)
     } catch (error) {
         console.log(error)

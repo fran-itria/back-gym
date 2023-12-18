@@ -1,10 +1,10 @@
-import { getCargas } from "../../handlers/cargas/getCargas";
+import { getLoads } from "../../handlers/cargas/getLoads";
 import { request, response } from "../../types";
 
 
-export default async function getCargasController(_req: request, res: response) {
+export default async function getLoadsController(_req: request, res: response) {
     try {
-        const cargas = await getCargas()
+        const cargas = await getLoads()
         res.status(200).json(cargas)
     } catch (error) {
         console.log(error)

@@ -4,11 +4,11 @@ import getCalentamientosController from "../controllers/calentamiento/getCalenta
 import createOneDayCalentamientoController from "../controllers/calentamiento/createOneDayCalentamiento";
 import deleteCalentamientoController from "../controllers/calentamiento/deleteCalentamiento";
 
-const calentamiento = Router()
+const warmUp = Router()
 
-calentamiento.get('', getCalentamientosController)
-calentamiento.post('/createCalentamiento', createCalentamientoController)
-calentamiento.post('/createOneCalentamiento', createOneDayCalentamientoController)
-calentamiento.delete("", deleteCalentamientoController)
+warmUp.get('', getCalentamientosController)
+warmUp.post('/createCalentamiento', createCalentamientoController)
+warmUp.post('/createOneCalentamiento', createOneDayCalentamientoController)
+warmUp.delete("", deleteCalentamientoController)
 
-export default calentamiento
+export default warmUp
