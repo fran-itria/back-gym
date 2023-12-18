@@ -1,14 +1,14 @@
 import { Router } from "express";
-import createCalentamientoController from "../controllers/calentamiento/createCalentamiento";
-import getCalentamientosController from "../controllers/calentamiento/getCalentamiento";
-import createOneDayCalentamientoController from "../controllers/calentamiento/createOneDayCalentamiento";
-import deleteCalentamientoController from "../controllers/calentamiento/deleteCalentamiento";
+import createWarmUpController from "../controllers/calentamiento/createWarmUp";
+import getWarmUpController from "../controllers/calentamiento/getWarmUp";
+import createOneDayWarmUpController from "../controllers/calentamiento/createOneDayWarmUp";
+import deleteWarmUpController from "../controllers/calentamiento/deleteWarmUp";
 
 const warmUp = Router()
 
-warmUp.get('', getCalentamientosController)
-warmUp.post('/createCalentamiento', createCalentamientoController)
-warmUp.post('/createOneCalentamiento', createOneDayCalentamientoController)
-warmUp.delete("", deleteCalentamientoController)
+warmUp.get('', getWarmUpController)
+warmUp.post('/createCalentamiento', createWarmUpController)
+warmUp.post('/createOneCalentamiento', createOneDayWarmUpController)
+warmUp.delete("", deleteWarmUpController)
 
 export default warmUp

@@ -1,6 +1,6 @@
 import { WarmUp, Day, Exercise } from "../../db"
 
-export const getCalentamientos = async () => {
+export const getWarmUps = async () => {
     const warmUps = await WarmUp.findAll({
         include: {
             model: Day,

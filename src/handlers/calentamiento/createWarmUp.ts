@@ -4,7 +4,7 @@ import { createDay } from "../day/createDay";
 import { createExercises } from "../ejercicio/createExercises";
 import { getOneUserId } from "../user/getOneUserId";
 
-export const createCalentamiento = async (props: RoutinePropertys) => {
+export const createWarmUp = async (props: RoutinePropertys) => {
     const { userId, days } = props
     const user: any = await getOneUserId(userId)
     if (!user) throw new Error('Usuario no encontrado')

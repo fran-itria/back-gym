@@ -1,9 +1,9 @@
-import deleteCalentamiento from "../../handlers/calentamiento/deleteCalentamiento";
+import deleteWarmUp from "../../handlers/calentamiento/deleteWarmUp";
 import { request, response } from "../../types";
 
-export default async function deleteCalentamientoController(req: request, res: response) {
+export default async function deleteWarmUpController(req: request, res: response) {
     try {
-        await deleteCalentamiento(req.body.id)
+        await deleteWarmUp(req.body.id)
         res.status(200).json({ Message: 'Calentamiento eliminado correctamente' })
     } catch (error) {
         console.log(error)

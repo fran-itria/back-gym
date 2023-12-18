@@ -3,7 +3,7 @@ import { createOneDayCalentamientoProps } from "../../types";
 import { createDay } from "../day/createDay";
 import { createExercises } from "../ejercicio/createExercises";
 
-export const createOneDayCalentamiento = async (props: createOneDayCalentamientoProps) => {
+export const createOneDayWarmUp = async (props: createOneDayCalentamientoProps) => {
     const { warmUpId, day } = props;
     const warmUp: any = await WarmUp.findByPk(warmUpId)
     if (!warmUp) throw new Error("Rutina no encontrada");
