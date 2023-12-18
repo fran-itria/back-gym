@@ -2,24 +2,16 @@ import { DataTypes, Sequelize } from "sequelize";
 
 export default function (sequelize: Sequelize) {
     sequelize.define(
-        'Ejercicio',
+        'Cargas',
         {
             id: {
                 type: DataTypes.UUID,
                 primaryKey: true,
-                defaultValue: DataTypes.UUIDV4
+                defaultValue: DataTypes.UUIDV4()
             },
-            name: {
+            cargas: {
                 type: DataTypes.STRING,
-                allowNull: false
-            },
-            series: {
-                type: DataTypes.INTEGER,
-                allowNull: false
-            },
-            repeticiones: {
-                type: DataTypes.STRING,
-                allowNull: false
+                allowNull: true
             }
         },
         {
