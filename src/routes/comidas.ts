@@ -8,7 +8,7 @@ import deleteMealController from "../controllers/comidas/deleteMeal";
 const comidas = Router()
 
 comidas.get('', getAllMealsController)
-comidas.get('/oneMeal', getOneMealController)
+comidas.get('/:id', getOneMealController)
 comidas.post('', createNewMealController)
 comidas.put('', updateMealController)
 comidas.delete('', deleteMealController)
