@@ -9,20 +9,20 @@ export default function (sequelize: Sequelize) {
                 primaryKey: true,
                 defaultValue: DataTypes.UUIDV4()
             },
-            fecha: {
-                type: DataTypes.STRING,
+            date: {
+                type: DataTypes.DATEONLY,
                 allowNull: false
             },
-            hora: {
+            hour: {
                 type: DataTypes.TIME,
                 allowNull: false
             },
-            ejercicio: {
+            exercise: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
             duration: {
-                type: DataTypes.TIME,
+                type: DataTypes.STRING,
                 allowNull: true
             },
             distance: {
