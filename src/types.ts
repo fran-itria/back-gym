@@ -29,7 +29,7 @@ export type ejerciciosPropertys = {
 }[];
 
 export type OneDayrutinaPropertys = {
-  rutinaId: string;
+  rutinaId: UUID;
   dia: {
     series: string,
     repeticiones: string,
@@ -38,7 +38,7 @@ export type OneDayrutinaPropertys = {
 };
 
 export type RutinaPropertys = {
-  userId: string;
+  userId: UUID;
   dias: {
     ejercicios: {
       name: string
@@ -49,7 +49,7 @@ export type RutinaPropertys = {
 }
 
 export type changeEjercicioPropertys = {
-  id: string,
+  id: UUID,
   name?: string,
   series?: number,
   repeticiones?: string,
@@ -59,7 +59,7 @@ export type changeEjercicioPropertys = {
 export type CalentamientoPropertys = RutinaPropertys
 
 export type createOneDayCalentamientoProps = {
-  calentamientoId: string;
+  calentamientoId: UUID;
   dia: {
     series: string,
     repeticiones: string,
@@ -68,6 +68,7 @@ export type createOneDayCalentamientoProps = {
 };
 
 type Moment = 'Desayuno' | 'Media mañana' | 'Almuerzo' | 'Merienda' | 'Cena'
+
 export type createMeal = {
   userId: UUID
   fecha: string
@@ -85,7 +86,7 @@ export type updateMealProps = {
 }
 
 export type changeUserProps = {
-  id: string,
+  id: UUID,
   name?: string,
   surname?: string,
   dni?: number,
@@ -96,4 +97,22 @@ export type changeUserProps = {
   contactEmergency?: number,
   admin?: boolean,
   pay?: boolean
+}
+
+export type createTraining = {
+  userId: UUID
+  date: string,
+  hour: string,
+  exercise: string,
+  duration?: string,
+  distance?: number
+}
+
+export type updateTraining = {
+  trainingId: UUID
+  date?: string,
+  hour?: string,
+  exercise?: string,
+  duration?: string,
+  distance?: number
 }
