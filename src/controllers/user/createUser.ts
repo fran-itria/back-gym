@@ -7,6 +7,13 @@ export default async function createUserController(req: request, res: response) 
         if (newUser) res.status(200).json(newUser)
     } catch (error) {
         console.log(error)
-        res.status(404).json({ Error: error.message })
+        if (error.message.includes('Users_user')) {
+            res.status(404).json({ Error: "Ya existe ese usuario" })
+        }
+        if (error.message.includes('Users_email')) {
+            res.status(404).json({ Error: "Email ya registrado" })
+        } else {
+            res.status(404).json({ Error: error.message })
+        }
     }
 }
