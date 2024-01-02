@@ -14,6 +14,7 @@ export type userPropertys = {
   email: string;
   phone: number;
   user: string;
+  password: string
 };
 
 export type ejercicioPropertys = {
@@ -96,7 +97,8 @@ export type changeUserProps = {
   phone?: number,
   contactEmergency?: number,
   admin?: boolean,
-  pay?: boolean
+  pay?: boolean,
+  password?: string
 }
 
 export type createTraining = {
