@@ -32,7 +32,8 @@ export default function (sequelize: Sequelize) {
             },
             user: {
                 type: DataTypes.STRING,
-                allowNull: false
+                allowNull: false,
+                unique: true
             },
             phone: {
                 type: DataTypes.BIGINT,
@@ -51,6 +52,14 @@ export default function (sequelize: Sequelize) {
                 defaultValue: false
             },
             ban: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            password: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            login: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             }

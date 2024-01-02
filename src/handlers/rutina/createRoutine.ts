@@ -6,7 +6,6 @@ import { getOneUserId } from "../user/getOneUserId";
 
 export const createRoutine = async ({ userId, days }: RoutinePropertys) => {
     const user: any = await getOneUserId(userId)
-    if (!user) throw new Error('Usuario no encontrado')
     const newRutina: any = await Routine.create()
     days.forEach(async (day) => {
         const newDay: any = await createDay()
