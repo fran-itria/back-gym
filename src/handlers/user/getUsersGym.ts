@@ -1,4 +1,4 @@
-import { WarmUp, Meals, ExtraTraining, Gym, Routine, User } from "../../db"
+import { WarmUp, Meals, ExtraTraining, Gym, Routine, User, Shift } from "../../db"
 
 export const getUsersGym = async (gymName: string) => {
     const users: any = await User.findAll({
@@ -18,6 +18,9 @@ export const getUsersGym = async (gymName: string) => {
             },
             {
                 model: ExtraTraining
+            },
+            {
+                model: Shift
             }
         ]
     })
