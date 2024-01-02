@@ -10,6 +10,7 @@ import idRegistro from './models/IdRegistro'
 import meals from './models/Meals'
 import extraTraining from './models/ExtraTraining'
 import loads from "./models/Loads"
+import shift from "./models/Shift"
 
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
@@ -32,8 +33,9 @@ idRegistro(sequelize)
 meals(sequelize)
 extraTraining(sequelize)
 loads(sequelize)
+shift(sequelize)
 
-const { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads } = sequelize.models
+const { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift } = sequelize.models
 
 // GYM - USER
 Gym.hasMany(User, { foreignKey: 'GymId' })
@@ -68,5 +70,9 @@ Meals.belongsTo(User, { foreignKey: 'UserId' })
 User.hasMany(ExtraTraining, { foreignKey: "UserId" })
 ExtraTraining.belongsTo(User, { foreignKey: "UserId" })
 
-export { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads }
+// USER - TURNO
+User.hasMany(Shift, { foreignKey: "UserId" })
+Shift.belongsTo(User, { foreignKey: "UserId" })
+
+export { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift }
 export const conn = sequelize
