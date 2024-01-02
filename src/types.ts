@@ -119,3 +119,9 @@ export type updateTraining = {
   duration?: string,
   distance?: number
 }
+
+export type createShiftProps = {
+  userId: string
+  day: string,
+  hour: string
+}
