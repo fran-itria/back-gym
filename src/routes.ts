@@ -9,6 +9,7 @@ import id from './routes/idRegistro';
 import meals from './routes/meals';
 import loads from './routes/loads';
 import extra from './routes/extra';
+import shift from './routes/shift';
 const cors = require('cors')
 const morgan = require('morgan')
 const server = express()
@@ -27,6 +28,7 @@ server.use('/calentamiento', warmUp)
 server.use('/idregistro', id)
 server.use('/comidas', meals)
 server.use('/extra', extra)
+server.use('/shift', shift)
 
 
 module.exports = server
