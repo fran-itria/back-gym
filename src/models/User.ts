@@ -58,6 +58,10 @@ export default function (sequelize: Sequelize) {
             password: {
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+            login: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
             }
         },
         {

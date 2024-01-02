@@ -98,7 +98,8 @@ export type changeUserProps = {
   contactEmergency?: number,
   admin?: boolean,
   pay?: boolean,
-  password?: string
+  password?: string,
+  login?: boolean
 }
 
 export type createTraining = {
