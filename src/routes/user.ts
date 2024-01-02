@@ -4,6 +4,7 @@ import createUserController from "../controllers/user/createUser";
 import getOneUserIdController from "../controllers/user/getOneUserId";
 import updateUserController from "../controllers/user/updateUser";
 import getUsersGymController from "../controllers/user/getUsersGym";
+import loginUserController from "../controllers/user/loginUser";
 
 const user = Router();
 
@@ -12,5 +13,6 @@ user.get("/:gymName", getUsersGymController);
 user.get("/:id", getOneUserIdController);
 user.post("", createUserController);
 user.put("", updateUserController)
+user.put("/login", loginUserController)
 
 export default user;
