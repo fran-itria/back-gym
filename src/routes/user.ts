@@ -12,7 +12,7 @@ user.get("", getUsersController);
 user.get("/:gymName", getUsersGymController);
 user.get("/:id", getOneUserIdController);
 user.post("", createUserController);
-user.put("", updateUserController)
-user.put("/login", loginUserController)
+user.put("", updateUserController);
+user.put("/login", loginUserController);
 
 export default user;
