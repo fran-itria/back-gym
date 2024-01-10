@@ -1,4 +1,4 @@
-import { WarmUp, Meals, ExtraTraining, Gym, Routine, User, Shift } from "../../db"
+import { WarmUp, Meals, ExtraTraining, Gym, Routine, User, Shift, Day, Exercise } from "../../db"
 
 const getUsers = async () => {
     const users = await User.findAll({
@@ -9,6 +9,16 @@ const getUsers = async () => {
             },
             {
                 model: Routine,
+                include: [
+                    {
+                        model: Day,
+                        include: [
+                            {
+                                model: Exercise
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 model: WarmUp,
