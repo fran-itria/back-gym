@@ -1,5 +1,5 @@
 
-import { createOneDayWarmUp } from "../../handlers/calentamiento/createOneDaywARMuP";
+import { createOneDayWarmUp } from "../../handlers/calentamiento/createOneDayWarmUp";
 import { request, response } from "../../types";
 
 export default async function createOneDayWarmUpController(req: request, res: response) {
