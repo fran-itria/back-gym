@@ -14,12 +14,12 @@ export default async function createUser(propertys: userPropertys) {
     email,
     phone,
     user,
-    password
+    password,
+    admin
   } = propertys;
   const gym: any = await getOneGymName(gymName);
   if (!gym) throw new Error('Gym no registrado')
   if (!password || !name || !surname || !contactEmergency || !dni || !age || !email || !phone || !user) throw new Error('Faltan datos')
-  console.log(password)
   const passwordHash = hash(password)
   const newUser = await User.create({
     name,
@@ -30,7 +30,8 @@ export default async function createUser(propertys: userPropertys) {
     email,
     phone,
     user,
-    password: passwordHash
+    password: passwordHash,
+    admin
   });
   await gym.addUser(newUser);
   return newUser;
