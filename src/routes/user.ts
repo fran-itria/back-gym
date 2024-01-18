@@ -9,8 +9,8 @@ import loginUserController from "../controllers/user/loginUser";
 const user = Router();
 
 user.get("", getUsersController);
-user.get("/:gymName", getUsersGymController);
-user.get("/:id", getOneUserIdController);
+user.get("/forGym/:gymName", getUsersGymController);
+user.get("/getOneUser/:id", getOneUserIdController);
 user.post("", createUserController);
 user.put("", updateUserController);
 user.put("/login", loginUserController);
