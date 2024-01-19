@@ -9,16 +9,6 @@ const getUsers = async () => {
             },
             {
                 model: Routine,
-                include: [
-                    {
-                        model: Day,
-                        include: [
-                            {
-                                model: Exercise
-                            }
-                        ]
-                    }
-                ]
             },
             {
                 model: WarmUp,
