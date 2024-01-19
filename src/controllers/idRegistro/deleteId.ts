@@ -3,7 +3,7 @@ import { request, response } from "../../types";
 
 export default async function deleteIdController(req: request, res: response) {
     try {
-        await deleteId(req.body.id)
+        await deleteId(req.params.id)
         res.status(200).json({ Message: 'Id eliminado correctamente' })
     } catch (error) {
         console.log(error)
