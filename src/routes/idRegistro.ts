@@ -9,6 +9,6 @@ const id = Router()
 id.get('', getAllIdRegistroController)
 id.get('/:id', getOneIdController)
 id.post('', postIdController)
-id.delete('', deleteIdController)
+id.delete('/delete/:id', deleteIdController)
 
 export default id
