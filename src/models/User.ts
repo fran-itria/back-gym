@@ -61,7 +61,7 @@ export default function (sequelize: Sequelize) {
             },
             login: {
                 type: DataTypes.BOOLEAN,
-                defaultValue: false
+                defaultValue: true
             }
         },
         {
