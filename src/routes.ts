@@ -10,7 +10,7 @@ import meals from "./routes/meals";
 import loads from "./routes/loads";
 import extra from "./routes/extra";
 import shift from "./routes/shift";
-const cors = require("cors");
+const cors = require("cors")
 const morgan = require("morgan");
 const server = express();
 require("dotenv").config();
