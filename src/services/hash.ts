@@ -1,8 +1,6 @@
-import crypto from "crypto";
+import bcrypt from "bcrypt";
 
 export default function hash(password: string) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const passwordHash = crypto.createHash("sha256").update(data).digest("hex");
+    const passwordHash = bcrypt.hashSync(password, 10)
     return passwordHash
 }

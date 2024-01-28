@@ -5,7 +5,8 @@ import { getOneUserId } from "./getOneUserId";
 export const updateUser = async (changes: changeUserProps) => {
     const { id, admin, login, contactEmergency, dni, age, email, name, pay, phone, surname, user, password } = changes
     const existUser: any = await getOneUserId(id)
-    const passwordHash = hash(password)
+    let confirmPassword = password
+    if (password) { confirmPassword = hash(password) }
     await existUser.update({
         admin,
         contactEmergency,
@@ -17,7 +18,7 @@ export const updateUser = async (changes: changeUserProps) => {
         phone,
         surname,
         user,
-        password: passwordHash,
+        password: confirmPassword,
         login
     })
     return existUser
