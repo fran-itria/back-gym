@@ -15,7 +15,9 @@ export default async function createUser(propertys: userPropertys) {
     phone,
     user,
     password,
-    admin
+    admin,
+    linkMp,
+    photo
   } = propertys;
   const gym: any = await getOneGymName(gymName);
   if (!gym) throw new Error('Gym no registrado')
@@ -31,7 +33,9 @@ export default async function createUser(propertys: userPropertys) {
     phone,
     user,
     password: passwordHash,
-    admin
+    admin,
+    linkMp,
+    photo
   });
   await gym.addUser(newUser);
   return newUser;

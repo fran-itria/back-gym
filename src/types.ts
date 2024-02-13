@@ -16,6 +16,8 @@ export type userPropertys = {
   user: string;
   password: string
   admin?: boolean
+  photo?: string
+  linkMp?: string
 };
 
 export type ejercicioPropertys = {
