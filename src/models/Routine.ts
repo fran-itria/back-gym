@@ -8,6 +8,10 @@ export default function (sequelize: Sequelize) {
                 type: DataTypes.UUID,
                 primaryKey: true,
                 defaultValue: DataTypes.UUIDV4
+            },
+            weeks: {
+                type: DataTypes.INTEGER,
+                defaultValue: 1
             }
         },
         {
