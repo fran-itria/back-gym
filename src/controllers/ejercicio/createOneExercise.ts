@@ -5,12 +5,14 @@ export default async function createOneExerciseController(
   req: request,
   res: response
 ) {
-  const { exerciseName, series, reps } = req.body;
+  const { exercise, exerciseName, series, reps, dayId } = req.body;
   try {
     const newEjercicio = await createOneExercise({
+      exercise,
       name: exerciseName,
       series,
       reps,
+      dayId
     });
     res.status(200).json(newEjercicio);
   } catch (error) {
@@ -18,3 +20,10 @@ export default async function createOneExerciseController(
     res.status(404).json({ Error: error.message });
   }
 }
+
+/*
+
+  Tengo que acceder al dia que le quiero agregar un ejercicio,
+  crear el ejercicio y asociarlo al día correspondiente 
+
+*/

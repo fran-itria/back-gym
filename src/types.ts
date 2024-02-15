@@ -21,6 +21,8 @@ export type userPropertys = {
 };
 
 export type ejercicioPropertys = {
+  exercise: number
+  dayId: string
   name: string;
   series: string;
   reps: string;
