@@ -2,6 +2,7 @@ import { Routine } from "../../db";
 import { OneDayrutinaPropertys } from "../../types";
 import { createDay } from "../day/createDay";
 import { createExercises } from "../ejercicio/createExercises";
+import getOneRoutine from "./getOneRoutine";
 
 export const createOneDayRoutine = async (propertys: OneDayrutinaPropertys) => {
   const { routineId, day } = propertys;
@@ -11,5 +12,6 @@ export const createOneDayRoutine = async (propertys: OneDayrutinaPropertys) => {
   const exercises: any = await createExercises(day)
   await existDay.addExercise(exercises);
   await routine.addDay(existDay)
-  return routine;
+  const actualRoutine = await getOneRoutine(routine.id);
+  return actualRoutine
 };
