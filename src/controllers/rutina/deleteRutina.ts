@@ -3,7 +3,7 @@ import { request, response } from "../../types";
 
 export default async function deleteRoutineController(req: request, res: response) {
     try {
-        await deleteRoutine(req.body.id)
+        await deleteRoutine(req.params.id)
         res.status(200).json({ Message: 'Rutina eliminada correctamete' })
     } catch (error) {
         console.log(error)

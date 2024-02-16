@@ -13,6 +13,6 @@ routine.get("/:id", getOneRoutineController)
 routine.post("/createOneDayRutina", createOneDayRoutineController);
 routine.post("/createRutina", createRoutineController);
 routine.put("", updateRutinaController)
-routine.delete("", deleteRoutineController)
+routine.delete("/delete/:id", deleteRoutineController)
 
 export default routine;
