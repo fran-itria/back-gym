@@ -9,6 +9,6 @@ const day = Router();
 day.get("", getDayController);
 day.get("/oneDay/:id", getOneDayController)
 day.post("", createDayController);
-day.delete("", deleteDayController)
+day.delete("/delete/:id", deleteDayController)
 
 export default day;
