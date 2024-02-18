@@ -17,6 +17,12 @@ export default async function getOneRoutine(id: string) {
             attributes: ['id', 'WarmUpId']
         }
     })
+    routine.Days.forEach((day: { Exercises: { exercise: number; }[]; }) => {
+        day.Exercises.sort((exercise1: { exercise: number; }, exercise2: { exercise: number; }) => {
+            if (exercise1.exercise && exercise2.exercise) return exercise1.exercise - exercise2.exercise
+            return 0
+        })
+    });
     if (!routine) throw new Error('No se encuentra la rutina')
     return routine
 }
