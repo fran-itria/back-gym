@@ -3,7 +3,7 @@ import { request, response } from "../../types";
 
 export default async function createDayController(req: request, res: response) {
   try {
-    const newDay = await createDay();
+    const newDay = await createDay(req.body.day);
     res.status(200).json(newDay);
   } catch (error) {
     console.log(error);

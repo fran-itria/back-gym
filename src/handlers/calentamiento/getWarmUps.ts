@@ -9,7 +9,7 @@ export const getWarmUps = async () => {
                     model: Exercise
                 },
             ],
-            attributes: ['id', 'WarmUpId']
+            attributes: ['id', 'WarmUpId', 'numberDay']
         }
     })
     if (warmUps.length == 0) throw new Error('No hay calentamientos para este usuario')

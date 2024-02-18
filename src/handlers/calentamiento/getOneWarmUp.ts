@@ -9,7 +9,7 @@ export default async function getOneWarmUp(id: string) {
                     model: Exercise,
                 },
             ],
-            attributes: ['id', 'WarmUpId']
+            attributes: ['id', 'WarmUpId', 'numberDay']
         }
     })
     if (!routine) throw new Error('No se encuentra la rutina')
