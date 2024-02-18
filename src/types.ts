@@ -37,15 +37,19 @@ export type exercisesPropertys = {
 export type OneDayrutinaPropertys = {
   routineId: UUID;
   day: {
-    series: string,
-    reps: string,
-    name: string
-  }[]
+    day: number,
+    exercises: {
+      series: string,
+      reps: string,
+      name: string
+    }[]
+  }
 };
 
 export type RoutinePropertys = {
   userId: UUID;
   days: {
+    day: number
     exercises: {
       name: string
       series: string,
@@ -67,10 +71,13 @@ export type CalentamientoPropertys = RoutinePropertys
 export type createOneDayCalentamientoProps = {
   warmUpId: UUID;
   day: {
-    series: string,
-    reps: string,
-    name: string
-  }[]
+    day: number
+    exercises: {
+      series: string,
+      reps: string,
+      name: string
+    }[]
+  }
 };
 
 type Moment = 'Desayuno' | 'Media mañana' | 'Almuerzo' | 'Merienda' | 'Cena'
