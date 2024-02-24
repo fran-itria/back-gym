@@ -11,6 +11,6 @@ warmUp.get('', getWarmUpController)
 warmUp.get('/:id', getOneWarmUpController)
 warmUp.post('/createCalentamiento', createWarmUpController)
 warmUp.post('/createOneCalentamiento', createOneDayWarmUpController)
-warmUp.delete("", deleteWarmUpController)
+warmUp.delete("/delete/:id", deleteWarmUpController)
 
 export default warmUp
