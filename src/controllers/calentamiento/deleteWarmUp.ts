@@ -3,7 +3,7 @@ import { request, response } from "../../types";
 
 export default async function deleteWarmUpController(req: request, res: response) {
     try {
-        await deleteWarmUp(req.body.id)
+        await deleteWarmUp(req.params.id)
         res.status(200).json({ Message: 'Calentamiento eliminado correctamente' })
     } catch (error) {
         console.log(error)
