@@ -112,6 +112,7 @@ export type changeUserProps = {
   pay?: boolean,
   password?: string,
   login?: boolean
+  ban?: boolean
 }
 
 export type createTraining = {
