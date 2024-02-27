@@ -1,6 +1,6 @@
 import { IdRegistro } from "../../db"
 
-export const postId = async () => {
-    const newId = await IdRegistro.create()
+export const postId = async (gym: string) => {
+    const newId = await IdRegistro.create({ gym })
     return newId
 }
