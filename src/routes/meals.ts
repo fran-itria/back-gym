@@ -10,6 +10,6 @@ meals.get('', getAllMealsController)
 meals.get('/:id', getOneMealController)
 meals.post('', createNewMealController)
 meals.put('', updateMealController)
-meals.delete('', deleteMealController)
+meals.delete('/delete/:id', deleteMealController)
 
 export default meals
