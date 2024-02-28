@@ -4,9 +4,8 @@ import { getOneUserId } from "../user/getOneUserId";
 
 export const createExtraTraining = async ({ userId, date, exercise, hour, distance, duration }: createTraining) => {
     const user: any = await getOneUserId(userId)
-    const newDate = new Date(date)
     const newTraining = await ExtraTraining.create({
-        date: newDate,
+        date,
         exercise,
         hour,
         distance,

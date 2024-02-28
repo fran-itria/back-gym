@@ -11,6 +11,6 @@ extra.get('', getExtraTrainingController)
 extra.get('/:id', getOneExtraTrainingController)
 extra.post('', createExtraTrainingController)
 extra.put('', updateExtraTrainingController)
-extra.delete('', deleteExtraTrainingController)
+extra.delete('/delete/:id', deleteExtraTrainingController)
 
 export default extra
