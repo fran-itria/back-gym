@@ -79,5 +79,9 @@ ExtraTraining.belongsTo(User, { foreignKey: "UserId" })
 User.hasMany(Shift, { foreignKey: "UserId" })
 Shift.belongsTo(User, { foreignKey: "UserId" })
 
+// GYM - TURNO
+Gym.hasMany(Shift, {foreignKey: 'GymId'})
+Shift.belongsTo(Gym, {foreignKey: 'GymId'})
+
 export { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift }
 export const conn = sequelize

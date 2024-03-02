@@ -135,6 +135,7 @@ export type updateTraining = {
 
 export type createShiftProps = {
   userId: string
+  GymId: UUID
   day: string,
   hour: string
 }
