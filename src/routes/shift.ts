@@ -9,6 +9,6 @@ const shift = Router()
 shift.get("", getShiftsController)
 shift.post("", createShiftController)
 shift.put("", updateShiftController)
-shift.delete("", deleteShiftController)
+shift.delete("/delete/:id", deleteShiftController)
 
 export default shift
