@@ -24,6 +24,13 @@ export default function (sequelize: Sequelize) {
             reps: {
                 type: DataTypes.STRING,
                 allowNull: false
+            },
+            link: {
+                type: DataTypes.STRING,
+                allowNull: true,
+                validate: {
+                    isUrl: true
+                }
             }
         },
         {

@@ -5,13 +5,14 @@ export default async function createOneExerciseController(
   req: request,
   res: response
 ) {
-  const { exercise, exerciseName, series, reps, dayId } = req.body;
+  const { exercise, exerciseName, series, reps, link, dayId } = req.body;
   try {
     const newEjercicio = await createOneExercise({
       exercise,
       name: exerciseName,
       series,
       reps,
+      link,
       dayId
     });
     res.status(200).json(newEjercicio);

@@ -26,12 +26,14 @@ export type ejercicioPropertys = {
   name: string;
   series: string;
   reps: string;
+  link?: string
 };
 
 export type exercisesPropertys = {
   name: string;
   series: string;
   reps: string;
+  link: string
 }[];
 
 export type OneDayrutinaPropertys = {
@@ -42,6 +44,7 @@ export type OneDayrutinaPropertys = {
       series: string,
       reps: string,
       name: string
+      link: string
     }[]
   }
 };
@@ -54,6 +57,7 @@ export type RoutinePropertys = {
       name: string
       series: string,
       reps: string,
+      link: string
     }[]
   }[]
 }
@@ -76,6 +80,7 @@ export type createOneDayCalentamientoProps = {
       series: string,
       reps: string,
       name: string
+      link: string
     }[]
   }
 };
