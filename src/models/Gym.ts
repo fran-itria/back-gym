@@ -13,6 +13,10 @@ export default function (sequelize: Sequelize) {
                 type: DataTypes.STRING,
                 unique: true,
                 allowNull: false
+            },
+            linkMp: {
+                type: DataTypes.STRING,
+                allowNull: true
             }
         },
         {
