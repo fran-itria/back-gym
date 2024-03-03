@@ -146,6 +146,20 @@ export type createShiftProps = {
 
 export type updateGymProps = {
   id: UUID,
-  name?: string,
-  linkMp: string
+  name?: string
+}
+
+export type createPaymentProps = {
+  UserId: UUID
+  GymId: UUID
+  date: string
+  hour: string
+  amount: number
+}
+
+export type updatePaymentProps = {
+  id: UUID,
+  date?: string
+  hour?: string
+  amount?: string
 }

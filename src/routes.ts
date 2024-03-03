@@ -10,6 +10,7 @@ import meals from "./routes/meals";
 import loads from "./routes/loads";
 import extra from "./routes/extra";
 import shift from "./routes/shift";
+import payments from "./routes/payments";
 const cors = require("cors")
 const morgan = require("morgan");
 const server = express();
@@ -29,5 +30,6 @@ server.use("/idregistro", id);
 server.use("/comidas", meals);
 server.use("/extra", extra);
 server.use("/shift", shift);
+server.use("/payments", payments)
 
 module.exports = server;

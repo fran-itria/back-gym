@@ -11,6 +11,7 @@ import meals from './models/Meals'
 import extraTraining from './models/ExtraTraining'
 import loads from "./models/Loads"
 import shift from "./models/Shift"
+import payments from "./models/Payments"
 
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
@@ -39,8 +40,9 @@ meals(sequelize)
 extraTraining(sequelize)
 loads(sequelize)
 shift(sequelize)
+payments(sequelize)
 
-const { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift } = sequelize.models
+const { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift, Payments} = sequelize.models
 
 // GYM - USER
 Gym.hasMany(User, { foreignKey: 'GymId' })
@@ -83,5 +85,13 @@ Shift.belongsTo(User, { foreignKey: "UserId" })
 Gym.hasMany(Shift, {foreignKey: 'GymId'})
 Shift.belongsTo(Gym, {foreignKey: 'GymId'})
 
-export { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift }
+// GYM - PAGOS
+Gym.hasMany(Payments, {foreignKey: 'GymId'})
+Payments.belongsTo(Gym, {foreignKey: 'GymId'})
+
+// USER - PAGOS
+User.hasMany(Payments, {foreignKey: 'UserId'})
+Payments.belongsTo(User, {foreignKey: 'UserId'})
+
+export { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift, Payments }
 export const conn = sequelize
