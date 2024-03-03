@@ -63,10 +63,6 @@ export default function (sequelize: Sequelize) {
                 type: DataTypes.BOOLEAN,
                 defaultValue: true
             },
-            linkMp: {
-                type: DataTypes.STRING,
-                allowNull: true
-            },
             photo: {
                 type: DataTypes.STRING,
                 allowNull: true

@@ -16,7 +16,6 @@ export default async function createUser(propertys: userPropertys) {
     user,
     password,
     admin,
-    linkMp,
     photo
   } = propertys;
   const gym: any = await getOneGymName(gymName);
@@ -34,7 +33,6 @@ export default async function createUser(propertys: userPropertys) {
     user,
     password: passwordHash,
     admin,
-    linkMp,
     photo
   });
   await gym.addUser(newUser);

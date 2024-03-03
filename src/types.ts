@@ -17,7 +17,6 @@ export type userPropertys = {
   password: string
   admin?: boolean
   photo?: string
-  linkMp?: string
 };
 
 export type ejercicioPropertys = {
@@ -143,4 +142,10 @@ export type createShiftProps = {
   GymId: UUID
   day: string,
   hour: string
+}
+
+export type updateGymProps = {
+  id: UUID,
+  name?: string,
+  linkMp: string
 }
