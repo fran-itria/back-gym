@@ -17,6 +17,10 @@ export default function (sequelize: Sequelize) {
             linkMp: {
                 type: DataTypes.STRING,
                 allowNull: true
+            },
+            amount: {
+                type: DataTypes.INTEGER,
+                allowNull: true
             }
         },
         {

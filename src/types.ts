@@ -148,6 +148,7 @@ export type updateGymProps = {
   id: UUID,
   name?: string
   linkMp?: string
+  amount?: number
 }
 
 export type createPaymentProps = {
