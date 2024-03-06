@@ -1,11 +1,12 @@
 import { updateGymProps } from "../../types";
 import getGymId from "./getGymId";
 
-export default async function updateGym({id, name}: updateGymProps){
+export default async function updateGym({ id, name, linkMp }: updateGymProps) {
     const gym = await getGymId(id)
-    if(!gym) throw new Error ('No existe el gym')
+    if (!gym) throw new Error('No existe el gym')
     await gym.update({
-        name
+        name,
+        linkMp
     })
-    return gym 
+    return gym
 }

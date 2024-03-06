@@ -147,6 +147,7 @@ export type createShiftProps = {
 export type updateGymProps = {
   id: UUID,
   name?: string
+  linkMp?: string
 }
 
 export type createPaymentProps = {
