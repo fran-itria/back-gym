@@ -3,7 +3,7 @@ import { changeUserProps } from "../../types";
 import { getOneUserId } from "./getOneUserId";
 
 export const updateUser = async (changes: changeUserProps) => {
-    const { id, admin, login, contactEmergency, dni, age, email, name, pay, phone, surname, user, password, ban } = changes
+    const { id, admin, login, contactEmergency, dni, age, email, name, pay, phone, surname, user, password, ban, newGymId } = changes
     const existUser: any = await getOneUserId(id)
     let confirmPassword = password
     if (password) { confirmPassword = hash(password) }
@@ -20,7 +20,8 @@ export const updateUser = async (changes: changeUserProps) => {
         user,
         password: confirmPassword,
         login,
-        ban
+        ban,
+        GymId: newGymId
     })
     return existUser
 }

@@ -6,6 +6,7 @@ import updateUserController from "../controllers/user/updateUser";
 import getUsersGymController from "../controllers/user/getUsersGym";
 import loginUserController from "../controllers/user/loginUser";
 import logoutController from "../controllers/user/logout";
+import changeGymController from "../controllers/user/cahngeGym";
 
 const user = Router();
 
@@ -16,5 +17,6 @@ user.post("", createUserController);
 user.put("", updateUserController);
 user.put("/login", loginUserController);
 user.put("/logout", logoutController)
+user.put("/changeGym", changeGymController)
 
 export default user;

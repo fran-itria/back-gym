@@ -117,6 +117,7 @@ export type changeUserProps = {
   password?: string,
   login?: boolean
   ban?: boolean
+  newGymId?: UUID
 }
 
 export type createTraining = {
@@ -164,4 +165,9 @@ export type updatePaymentProps = {
   date?: string
   hour?: string
   amount?: string
+}
+
+export type changeGymProps = {
+  userId: UUID
+  newGymId: UUID
 }
