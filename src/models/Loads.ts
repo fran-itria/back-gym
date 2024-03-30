@@ -12,6 +12,10 @@ export default function (sequelize: Sequelize) {
             loads: {
                 type: DataTypes.STRING,
                 allowNull: true
+            },
+            week: {
+                type: DataTypes.INTEGER,
+                allowNull: false
             }
         },
         {
