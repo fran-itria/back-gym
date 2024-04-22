@@ -118,6 +118,7 @@ export type changeUserProps = {
   login?: boolean
   ban?: boolean
   newGymId?: UUID
+  photo?: string
 }
 
 export type createTraining = {
