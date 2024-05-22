@@ -31,6 +31,6 @@ server.use("/comidas", meals);
 server.use("/extra", extra);
 server.use("/shift", shift);
 server.use("/payments", payments)
-server.use("/mails", mails)
+// server.use("/mails", mails)
 
 module.exports = server;
