@@ -67,6 +67,7 @@ export type changeEjercicioPropertys = {
   series?: number,
   reps?: string,
   loads?: string
+  link?: string
 }
 
 export type CalentamientoPropertys = RoutinePropertys

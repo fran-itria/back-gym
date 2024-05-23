@@ -28,9 +28,6 @@ export default function (sequelize: Sequelize) {
             link: {
                 type: DataTypes.STRING,
                 allowNull: true,
-                validate: {
-                    isUrl: true
-                }
             }
         },
         {

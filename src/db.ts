@@ -40,7 +40,7 @@ loads(sequelize)
 shift(sequelize)
 payments(sequelize)
 
-const { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift, Payments} = sequelize.models
+const { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift, Payments } = sequelize.models
 
 // GYM - USER
 Gym.hasMany(User, { foreignKey: 'GymId' })
@@ -80,16 +80,16 @@ User.hasMany(Shift, { foreignKey: "UserId" })
 Shift.belongsTo(User, { foreignKey: "UserId" })
 
 // GYM - TURNO
-Gym.hasMany(Shift, {foreignKey: 'GymId'})
-Shift.belongsTo(Gym, {foreignKey: 'GymId'})
+Gym.hasMany(Shift, { foreignKey: 'GymId' })
+Shift.belongsTo(Gym, { foreignKey: 'GymId' })
 
 // GYM - PAGOS
-Gym.hasMany(Payments, {foreignKey: 'GymId'})
-Payments.belongsTo(Gym, {foreignKey: 'GymId'})
+Gym.hasMany(Payments, { foreignKey: 'GymId' })
+Payments.belongsTo(Gym, { foreignKey: 'GymId' })
 
 // USER - PAGOS
-User.hasMany(Payments, {foreignKey: 'UserId'})
-Payments.belongsTo(User, {foreignKey: 'UserId'})
+User.hasMany(Payments, { foreignKey: 'UserId' })
+Payments.belongsTo(User, { foreignKey: 'UserId' })
 
 export { User, Gym, Routine, Day, Exercise, WarmUp, IdRegistro, Meals, ExtraTraining, Loads, Shift, Payments }
 export const conn = sequelize
