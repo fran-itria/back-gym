@@ -12,9 +12,7 @@ import extraTraining from './models/ExtraTraining'
 import loads from "./models/Loads"
 import shift from "./models/Shift"
 import payments from "./models/Payments"
-
-
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
+import { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } from './config'
 
 const sequelize = new Sequelize(
     `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}`,
