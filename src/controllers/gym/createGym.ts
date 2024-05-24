@@ -8,6 +8,6 @@ export default async function createGymController(req: request, res: response) {
         res.status(200).json(newGym)
     } catch (error) {
         console.log(error)
-        if (error.message) res.status(404).json({ Error: "Gimnasio ya registrado" })
+        if (error.message) res.status(404).json({ Error: `Gimnasio ${name} ya registrado` })
     }
 }
