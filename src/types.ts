@@ -152,6 +152,10 @@ export type updateGymProps = {
   name?: string
   linkMp?: string
   amount?: number
+  limit?: number
+  time?: string
+  open?: string
+  close?: string
 }
 
 export type createPaymentProps = {

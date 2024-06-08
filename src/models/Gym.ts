@@ -1,3 +1,4 @@
+import { time } from "console";
 import { DataTypes, Sequelize } from "sequelize";
 
 export default function (sequelize: Sequelize) {
@@ -20,6 +21,18 @@ export default function (sequelize: Sequelize) {
             },
             amount: {
                 type: DataTypes.INTEGER,
+                allowNull: true
+            },
+            limit: {
+                type: DataTypes.INTEGER,
+                allowNull: true
+            },
+            time: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            range: {
+                type: DataTypes.ARRAY(DataTypes.STRING),
                 allowNull: true
             }
         },
