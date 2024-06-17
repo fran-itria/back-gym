@@ -14,7 +14,7 @@ export default function (sequelize: Sequelize) {
                 allowNull: false
             },
             hour: {
-                type: DataTypes.TIME,
+                type: DataTypes.STRING,
                 allowNull: false
             }
         },
