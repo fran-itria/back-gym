@@ -1,5 +1,5 @@
 require("dotenv").config();
-export const { PORT, PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
+export const { PORT, PGHOST, PGDATABASE, PGUSER, PGPASSWORD, USER_APLICATION, PASSWORD_APLICATION } = process.env;
 if (!PORT) {
   throw new Error("PORT is not defined");
 }
@@ -14,4 +14,10 @@ if (!PGUSER) {
 }
 if (!PGPASSWORD) {
   throw new Error("PGPASSWORD is not defined");
+}
+if (!USER_APLICATION) {
+  throw new Error("USER_APLICATION is not defined");
+}
+if (!PASSWORD_APLICATION) {
+  throw new Error("PASSWORD_APLICATION is not defined");
 }
