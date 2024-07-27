@@ -33,7 +33,8 @@ export default async function createUser(propertys: userPropertys) {
     user,
     password: passwordHash,
     admin,
-    photo
+    photo,
+    temporalCode: Math.floor(10000 + Math.random() * 9000)
   });
   await gym.addUser(newUser);
   return newUser;
