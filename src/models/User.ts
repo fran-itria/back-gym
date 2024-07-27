@@ -55,6 +55,10 @@ export default function (sequelize: Sequelize) {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            motiveBan: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
             password: {
                 type: DataTypes.STRING,
                 allowNull: false
@@ -65,6 +69,10 @@ export default function (sequelize: Sequelize) {
             },
             photo: {
                 type: DataTypes.STRING,
+                allowNull: true
+            },
+            temporalCode: {
+                type: DataTypes.INTEGER,
                 allowNull: true
             }
         },
