@@ -1,9 +1,9 @@
 import { Gym, User, Routine, WarmUp, Meals, ExtraTraining, Shift, Payments } from "../../db"
 
-const getOneUserDni = async (dni: number) => {
+const getOneUserEmail = async (email: string) => {
     const user = await User.findOne({
         where: {
-            dni: dni
+            email: email
         },
         include: [
             {
@@ -34,4 +34,4 @@ const getOneUserDni = async (dni: number) => {
     return user
 }
 
-export default getOneUserDni
+export default getOneUserEmail

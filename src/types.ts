@@ -120,6 +120,7 @@ export type changeUserProps = {
   ban?: boolean
   newGymId?: UUID
   photo?: string
+  temporalCode?: number | undefined
 }
 
 export type createTraining = {
