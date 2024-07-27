@@ -4,7 +4,7 @@ import getGymId from "../gym/getGymId";
 import { getOneUserId } from "./getOneUserId";
 
 export const updateUser = async (changes: changeUserProps) => {
-    const { id, admin, login, contactEmergency, dni, age, email, name, pay, phone, surname, user, password, ban, newGymId, photo } = changes
+    const { id, admin, login, contactEmergency, dni, age, email, name, pay, phone, surname, user, password, ban, newGymId, photo, temporalCode } = changes
     const existUser: any = await getOneUserId(id)
     if (newGymId) {
         const existGym: any = await getGymId(newGymId)
@@ -31,7 +31,8 @@ export const updateUser = async (changes: changeUserProps) => {
             password: confirmPassword,
             login,
             ban,
-            photo
+            photo,
+            temporalCode
         })
     }
     return existUser
