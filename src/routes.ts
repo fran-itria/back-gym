@@ -11,6 +11,7 @@ import loads from "./routes/loads";
 import extra from "./routes/extra";
 import shift from "./routes/shift";
 import payments from "./routes/payments";
+import mails from "./routes/mail";
 const cors = require("cors")
 const morgan = require("morgan");
 const server = express();
@@ -31,7 +32,7 @@ server.use("/comidas", meals);
 server.use("/extra", extra);
 server.use("/shift", shift);
 server.use("/payments", payments)
-// server.use("/mails", mails)
+server.use("/mails", mails);
 
 server.get("/", (_req, res) => {
     res.json({ message: "API is working" });
