@@ -9,6 +9,6 @@ export default async function registerMailController(req: request, res: response
     }
     catch (error) {
         console.error(error)
-        res.status(500).json(error)
+        res.status(404).json(error)
     }
 }
