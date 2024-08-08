@@ -52,10 +52,6 @@ export default function (sequelize: Sequelize) {
                 defaultValue: false
             },
             ban: {
-                type: DataTypes.BOOLEAN,
-                defaultValue: false
-            },
-            motiveBan: {
                 type: DataTypes.STRING,
                 allowNull: true
             },

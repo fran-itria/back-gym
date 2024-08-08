@@ -117,7 +117,7 @@ export type changeUserProps = {
   pay?: boolean,
   password?: string,
   login?: boolean
-  ban?: boolean
+  ban?: string | null
   newGymId?: UUID
   photo?: string
   temporalCode?: number | undefined
