@@ -14,7 +14,6 @@ export const updateUser = async (changes: changeUserProps) => {
             },
             GymId: newGymId,
             ban,
-            login
         })
     } else {
         let confirmPassword = password
