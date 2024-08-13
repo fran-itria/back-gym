@@ -2,7 +2,7 @@ import { USER_APLICATION } from "../../config";
 import transporter from "../../nodemailer/nodemailer";
 import { team } from "../../routes/mail";
 
-export default async function resetPassword(email: string, user: string) {
+export default async function resetPassword(email: string, user: string, code: number) {
     await transporter.verify();
     const mail = {
         from: USER_APLICATION,
@@ -13,12 +13,9 @@ export default async function resetPassword(email: string, user: string) {
             Hola <b>${user}</b>.
             </h1>
             <p>
-            Su cambio de contraseña se ha realizado con exito, te recordamos el <b>user</b> y ya podrás iniciar sesion en la web
+            Has solicitado un cambio de contraseña. Su código para restaruar la contraseña es:
             </p>
-            <p>Vuelve a la web e inicia sesión</p>
-            <a href='https://pro-active-center.vercel.app'>
-                Iniciar sesión
-            </a>
+            <p><b>${code}</b></p>
             <footer>
             Saludos cordiales,
             El equipo de ${team}
