@@ -14,7 +14,6 @@ export default async function confirmChangeGymMail(idUser: UUID, idNewGym: UUID)
         .filter(user => user.admin)
         .map(admin => admin.email);
 
-
     await transporter.verify();
     let mail = null
     mail = {
@@ -28,7 +27,7 @@ export default async function confirmChangeGymMail(idUser: UUID, idNewGym: UUID)
             <p>
             ${user.name} ${user.surname} quiere incorporarse a su gimnasio, ¿desea aceptar la solicitud? 
             </p>
-            <a href='http://localhost:5173/acceptUser?userId=${user.id}&gymId=${gym.id}'>
+            <a href='http://pro-active-center.vercel.app//acceptUser?userId=${user.id}&gymId=${gym.id}'>
                 Aceptar
             </a>
             <footer>
