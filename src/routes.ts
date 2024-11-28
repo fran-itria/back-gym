@@ -19,7 +19,21 @@ require("dotenv").config();
 
 server.use(morgan("dev"));
 server.use(express.json());
-server.use(cors());
+server.options("*", cors());
+server.use(cors({
+    origin: (origin: string, callback: any) => {
+        if (origin === "http://127.0.0.1:5173" || origin === "https://pro-active-center.vercel.app") {
+            return callback(null, true);
+        }
+
+        if (!origin) {
+            return callback(null, true);
+        }
+
+        return callback(new Error("No tienes permisos para acceder a esta API"));
+    },
+}));
+
 server.use("/user", user);
 server.use("/gym", gym);
 server.use("/rutina", routine);
