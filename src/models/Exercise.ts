@@ -18,7 +18,7 @@ export default function (sequelize: Sequelize) {
                 allowNull: false
             },
             series: {
-                type: DataTypes.INTEGER,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             reps: {
