@@ -25,18 +25,21 @@ export default async function confirmChangeGymMail(idUser: UUID, idNewGym: UUID)
             Hola <b>${gym.name}</b>.
             </h1>
             <p>
-            ${user.name} ${user.surname} quiere incorporarse a su gimnasio, ¿desea aceptar la solicitud? 
+            ${user.name} ${user.surname} quiere incorporarse a su gimnasio
             </p>
-            <a href='http://pro-active-center.vercel.app//acceptUser?userId=${user.id}&gymId=${gym.id}'>
+            <p>
+            ¿Desea aceptar la solicitud? 
+            </p>
+            <a href='https://pro-active-center.vercel.app/acceptUser?userId=${user.id}&gymId=${gym.id}'>
                 Aceptar
             </a>
+            <p></p>
             <footer>
             Saludos cordiales,
             El equipo de ${team}
             </footer>
             `
     }
-
     await transporter.sendMail(mail);
     return true
 }
