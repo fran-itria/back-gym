@@ -20,7 +20,13 @@ export const getOneUserId = async (id: string) => {
         model: ExtraTraining
       },
       {
-        model: Shift
+        model: Shift,
+        include: [
+          {
+            model: Gym,
+            attributes: ["name"]
+          }
+        ]
       },
       {
         model: Payments,
