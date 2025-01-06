@@ -7,7 +7,7 @@ import path from 'path';
 export default async function registerMail(admin: boolean, email: string, gym: string | null, name: string, temporalCode: number) {
     await transporter.verify();
 
-    const htmlTemplate = fs.readFileSync(path.join(__dirname, admin ? './html/registerAdmin.html' : './html/registerUser.html'), 'utf8');
+    const htmlTemplate = fs.readFileSync(path.join(__dirname, admin ? 'handlers/mails/html/registerAdmin.html' : 'handlers/mails/html/registerUser.html'), 'utf8');
     const htmlContent = htmlTemplate
         .replace('{name}', name)
         .replace('{gym}', gym)
