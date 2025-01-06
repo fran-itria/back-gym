@@ -11,7 +11,7 @@ export default async function registerMail(admin: boolean, email: string, gym: s
     const htmlContent = htmlTemplate
         .replace('{name}', name)
         .replace('{gym}', gym)
-        .replace('{temporalCode}', temporalCode.toLocaleString())
+        .replace('{temporalCode}', temporalCode.toString())
         .replace('{team}', team)
         .replace('{team}', team)
 

@@ -9,7 +9,7 @@ export default async function resetPassword(email: string, user: string, code: n
     const htmlTemplate = fs.readFileSync(path.join(__dirname, './html/resetPassword.html'), 'utf8');
     const htmlContent = htmlTemplate
         .replace('{user}', user)
-        .replace('{code}', code.toLocaleString())
+        .replace('{code}', code.toString())
         .replace('{team}', team)
 
     const mail = {
