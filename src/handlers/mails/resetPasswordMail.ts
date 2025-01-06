@@ -1,22 +1,26 @@
 import { USER_APLICATION } from "../../config";
 import transporter from "../../nodemailer/nodemailer";
 import { team } from "../../routes/mail";
-import fs from 'fs';
-import path from 'path';
 
 export default async function resetPassword(email: string, user: string, code: number) {
     await transporter.verify();
-    const htmlTemplate = fs.readFileSync(path.join(__dirname, './html/resetPassword.html'), 'utf8');
-    const htmlContent = htmlTemplate
-        .replace('{user}', user)
-        .replace('{code}', code.toString())
-        .replace('{team}', team)
 
     const mail = {
         from: USER_APLICATION,
         to: email,
         subject: `Cambio de contraseña`,
-        html: htmlContent
+        html: `
+        <h1 style="color: #333;">
+            Hola <b>${user}</b>.
+        </h1>
+        <p>
+            Has solicitado un cambio de contraseña. Su código para restaruar la contraseña es:
+        </p>
+        <b>${code}</b>
+        <footer style="margin-top: 20px; color: #777;">
+            Saludos cordiales,
+            El equipo de ${team}
+        </footer>`
     }
 
     await transporter.sendMail(mail);

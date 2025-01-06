@@ -1,19 +1,9 @@
 import { USER_APLICATION } from "../../config";
 import transporter from "../../nodemailer/nodemailer";
 import { team } from "../../routes/mail";
-import fs from 'fs';
-import path from 'path';
 
 export default async function registerMail(admin: boolean, email: string, gym: string | null, name: string, temporalCode: number) {
     await transporter.verify();
-
-    const htmlTemplate = fs.readFileSync(path.join(__dirname, admin ? 'handlers/mails/html/registerAdmin.html' : 'handlers/mails/html/registerUser.html'), 'utf8');
-    const htmlContent = htmlTemplate
-        .replace('{name}', name)
-        .replace('{gym}', gym)
-        .replace('{temporalCode}', temporalCode.toString())
-        .replace('{team}', team)
-        .replace('{team}', team)
 
     let mail = null
     if (admin) {
@@ -21,7 +11,25 @@ export default async function registerMail(admin: boolean, email: string, gym: s
             from: USER_APLICATION,
             to: email,
             subject: `Registro exitoso`,
-            html: htmlContent
+            html: `
+                <h1 style="color: #333;">
+                    Hola <b>${name}</b>, bienvenido a <b>${team}</b>.
+                </h1>
+                <p>
+                    Estamos encantados de tenerte con nosotros. A partir de ahora, podrás disfrutar de 
+                    todas las características y beneficios que ofrecemos. Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.
+                </p>
+                <p>
+                    Para comenzar, necesitamos que verifiques tu cuenta colocando el siguiente codigo <b>${temporalCode}</b>.
+                </p>
+                <p>
+                    ¡Esperamos que disfrutes de tu experiencia con nosotros!
+                </p>
+                <footer style="margin-top: 20px; color: #777;">
+                    Saludos cordiales,
+                    El equipo de <b>${team}</b>
+                </footer>
+            `
         }
     }
     else {
@@ -29,7 +37,25 @@ export default async function registerMail(admin: boolean, email: string, gym: s
             from: USER_APLICATION,
             to: email,
             subject: `Registro exitoso`,
-            html: htmlContent
+            html: `
+                <h1 style="color: #333;">
+                    Hola <b>${name}</b>, bienvenido a <b>${gym}</b>.
+                </h1>
+                <p>
+                    Estamos encantados de tenerte con nosotros. A partir de ahora, podrás disfrutar de 
+                    todas las características y beneficios que ofrecemos. Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.
+                </p>
+                <p>
+                    Para comenzar, necesitamos que verifiques tu cuenta colocando el siguiente codigo: <b>${temporalCode}</b>.
+                </p>
+                <p>
+                    ¡Esperamos que disfrutes de tu experiencia con nosotros!
+                </p>
+                <footer style="margin-top: 20px; color: #777">
+                    Saludos cordiales,
+                    El equipo de <b>${team}</b>
+                </footer>           
+            `
         }
     }
     await transporter.sendMail(mail);
