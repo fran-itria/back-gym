@@ -12,6 +12,8 @@ import extra from "./routes/extra";
 import shift from "./routes/shift";
 import payments from "./routes/payments";
 import mails from "./routes/mail";
+import path from 'path';
+
 const cors = require("cors")
 const morgan = require("morgan");
 const server = express();
@@ -34,6 +36,8 @@ server.use(express.json());
 //     },
 // }));
 server.use(cors());
+
+server.use('/static', express.static(path.join(__dirname, 'handlers/mails/html')));
 
 server.use("/user", user);
 server.use("/gym", gym);
