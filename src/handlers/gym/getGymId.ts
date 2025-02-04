@@ -4,7 +4,13 @@ export default async function getGymId(id: string) {
     const gym = await Gym.findByPk(id, {
         include: [
             {
-                model: Shift
+                model: Shift,
+                include: [
+                    {
+                        model: User,
+                        attributes: ['name', 'surname']
+                    }
+                ]
             },
             {
                 model: Payments,
