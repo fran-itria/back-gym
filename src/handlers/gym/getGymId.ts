@@ -21,6 +21,9 @@ export default async function getGymId(id: string) {
                     }
                 ]
             }
+        ],
+        order: [
+            [Shift, 'day', 'ASC']
         ]
     })
     if (!gym) throw new Error('Gimnasio no encontrado')
