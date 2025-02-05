@@ -40,7 +40,7 @@ export default async function confirmChangeGymMail(idUser: UUID, idNewGym: UUID)
                 <p>
                     ¿Desea aceptar la solicitud? 
                 </p>
-                <a href='https://pro-active-center.vercel.app/acceptUser?userId=${user.id}&gymId=${gym.id}'
+                <a href='https://proactivecenter.com.ar/acceptUser?userId=${user.id}&gymId=${gym.id}'
                     style="
                         border-radius: 4px;
                         display: flex;

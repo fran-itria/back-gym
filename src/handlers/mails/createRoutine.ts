@@ -89,7 +89,7 @@ export default async function createRoutineMail(email: string, routine: string) 
                 Puedes acceder a tu nueva rutina de ejercicios a través de tu cuenta en nuestra plataforma.
             </p>
             <a 
-                href="https://pro-active-center.vercel.app"
+                href="https://proactivecenter.com.ar"
                 style="
                     border-radius: 4px;
                     display: flex;
