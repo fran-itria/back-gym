@@ -29,7 +29,7 @@ export default async function confirmChangeGymMail(idUser: UUID, idNewGym: UUID)
                 padding: 0;
             ">
                 <h1 style="color: #333">
-                    Hola <b>${gym}</b>.
+                    Hola <b>${gym.name}</b>.
                 </h1>
                 <p style="
                     margin: 0;
